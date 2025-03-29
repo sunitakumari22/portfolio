@@ -60,14 +60,14 @@ export default function ContactSection() {
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
-                <span>contact@sunitakumari.com</span>
+                <span>angelsunita2468@gmail.com</span>
               </a>
               
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                 <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <Github className="h-5 w-5 text-primary" />
                 </div>
-                <span>github.com/sunitakumari</span>
+                <span>github.com/sunitakumari22</span>
               </a>
               
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
