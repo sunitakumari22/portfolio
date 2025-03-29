@@ -12,7 +12,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold">
               Sunita <span className="text-primary">Kumari</span>
             </h3>
-            <p className="text-muted-foreground">UI Developer</p>
+            <p className="text-muted-foreground">Full Stack Developer</p>
           </div>
           
           <div className="flex space-x-4 mb-4 md:mb-0">

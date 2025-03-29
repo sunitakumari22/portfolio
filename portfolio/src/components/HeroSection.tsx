@@ -13,7 +13,7 @@ export default function HeroSection() {
               Sunita Kumari
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-              UI Developer at Pyxis Blu Infotech
+              Web Developer at Pyxis Blu Infotech
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
               I specialize in building dynamic, scalable, and high-performance web applications using the MEAN stack. From crafting intuitive UI with Angular to developing robust backends with Node.js and MongoDB, I create seamless full-stack solutions.
