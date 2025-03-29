@@ -91,23 +91,23 @@ export default function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div>
-  <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
-  <p className="text-muted-foreground mb-4">
-    I'm Sunita Kumari, a dedicated <strong>MEAN Stack Developer</strong> with a passion for building scalable and high-performance web applications. 
-    Currently working at <strong>Pyxis Blu Infotech</strong>, I specialize in developing dynamic full-stack applications using <strong>MongoDB, Express.js, Angular, and Node.js</strong>.
-  </p>
-  <p className="text-muted-foreground mb-4">
-  My expertise lies in building **scalable and high-performance full-stack applications** using the **MEAN stack (MongoDB, Express.js, Angular, and Node.js)**.  
-  I develop secure and efficient backends with **Node.js and Express.js**, while ensuring seamless, responsive frontend experiences with **Angular and TypeScript**.  
-  I focus on **RESTful APIs, database optimization, and seamless frontend-backend integration** to create dynamic web applications.  
-</p>
-<p className="text-muted-foreground">
-  I'm constantly learning and staying updated with the latest advancements in **JavaScript frameworks, NoSQL databases, and cloud-based technologies**  
-  to build modern, scalable, and efficient web solutions.
-</p>
+          <div>
+            <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
+            <p className="text-muted-foreground mb-4">
+              I'm Sunita Kumari, a dedicated <strong>MEAN Stack Developer</strong> with a passion for building scalable and high-performance web applications.
+              Currently working at <strong>Pyxis Blu Infotech</strong>, I specialize in developing dynamic full-stack applications using <strong>MongoDB, Express.js, Angular, and Node.js</strong>.
+            </p>
+            <p className="text-muted-foreground mb-4">
+              My expertise lies in building **scalable and high-performance full-stack applications** using the **MEAN stack (MongoDB, Express.js, Angular, and Node.js)**.
+              I develop secure and efficient backends with **Node.js and Express.js**, while ensuring seamless, responsive frontend experiences with **Angular and TypeScript**.
+              I focus on **RESTful APIs, database optimization, and seamless frontend-backend integration** to create dynamic web applications.
+            </p>
+            <p className="text-muted-foreground">
+              I'm constantly learning and staying updated with the latest advancements in **JavaScript frameworks, NoSQL databases, and cloud-based technologies**
+              to build modern, scalable, and efficient web solutions.
+            </p>
 
-</div>
+          </div>
 
 
           <div>

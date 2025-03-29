@@ -16,8 +16,8 @@ export default function HeroSection() {
               UI Developer at Pyxis Blu Infotech
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-  I specialize in building dynamic, scalable, and high-performance web applications using the MEAN stack. From crafting intuitive UI with Angular to developing robust backends with Node.js and MongoDB, I create seamless full-stack solutions.
-</p>
+              I specialize in building dynamic, scalable, and high-performance web applications using the MEAN stack. From crafting intuitive UI with Angular to developing robust backends with Node.js and MongoDB, I create seamless full-stack solutions.
+            </p>
 
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="rounded-full">
@@ -32,9 +32,9 @@ export default function HeroSection() {
             <div className="w-full h-[400px] bg-gradient-to-tr from-primary/20 to-secondary/30 rounded-full blur-3xl absolute -top-10 -right-10 -z-10"></div>
             <div className="bg-gradient-to-tr from-primary to-secondary rounded-full p-1 shadow-xl">
               <div className="bg-background rounded-full p-2">
-                <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
-                  alt="Sunita Kumari" 
+                <img
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+                  alt="Sunita Kumari"
                   className="rounded-full w-full h-full object-cover aspect-square"
                 />
               </div>
@@ -42,8 +42,8 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <a 
-        href="#about" 
+      <a
+        href="#about"
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex"
       >
         <Button variant="ghost" size="icon" className="rounded-full">
