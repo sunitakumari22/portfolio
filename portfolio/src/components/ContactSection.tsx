@@ -23,24 +23,59 @@ export default function ContactSection() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+    
+  //   // Simulating form submission
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //     toast({
+  //       title: "Message sent!",
+  //       description: "Thank you for your message. I'll get back to you soon.",
+  //     });
+  //     setFormData({
+  //       name: "",
+  //       email: "",
+  //       subject: "",
+  //       message: ""
+  //     });
+  //   }, 1000);
+  // };
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    
-    // Simulating form submission
-    setTimeout(() => {
-      setLoading(false);
+  
+    try {
+      const response = await fetch("http://localhost:5000/message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+  
+      const result = await response.json();
+      
       toast({
         title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        description: result.message || "Thank you for your message. I'll get back to you soon.",
       });
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
+  
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
       });
-    }, 1000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
