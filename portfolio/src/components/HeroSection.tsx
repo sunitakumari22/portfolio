@@ -16,8 +16,9 @@ export default function HeroSection() {
               UI Developer at Pyxis Blu Infotech
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              I craft beautiful, responsive, and user-friendly interfaces with modern web technologies.
-            </p>
+  I specialize in building dynamic, scalable, and high-performance web applications using the MEAN stack. From crafting intuitive UI with Angular to developing robust backends with Node.js and MongoDB, I create seamless full-stack solutions.
+</p>
+
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="rounded-full">
                 <a href="#contact">Get in Touch</a>
