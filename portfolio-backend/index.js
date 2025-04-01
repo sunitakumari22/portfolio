@@ -33,7 +33,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 // API for message
-app.post("/message", async (req, res) => {
+app.post("/api/message", async (req, res) => {
     let data = new message(req.body);
     let result = await data.save();
     console.log(req.body);
@@ -45,7 +45,7 @@ app.post("/message", async (req, res) => {
 //     res.send(data);
 //     console.log("data", data);
 // });
-app.get("/messageList", async (req, res) => {
+app.get("/api/messageList", async (req, res) => {
     try {
         let data = await message.find().limit(50); // Fetch only 50 messages
         res.send(data);
