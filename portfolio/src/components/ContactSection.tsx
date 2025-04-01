@@ -47,7 +47,7 @@ export default function ContactSection() {
     setLoading(true);
   
     try {
-      const response = await fetch("http://localhost:5000/message", {
+      const response = await fetch("http://localhost:5000/api/message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
