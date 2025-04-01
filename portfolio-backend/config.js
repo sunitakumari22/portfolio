@@ -27,12 +27,8 @@ if (!mongoURI) {
     process.exit(1);
 }
 
-mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds
-    socketTimeoutMS: 45000, // Close sockets after 45 seconds
-})
-.then(() => console.log("✅ Connected to MongoDB"))
-.catch(err => console.error("❌ MongoDB Connection Error:", err));
+mongoose.connect(mongoURI) // ✅ Removed deprecated options
+    .then(() => console.log("✅ Connected to MongoDB"))
+    .catch(err => console.error("❌ MongoDB Connection Error:", err));
+
 
