@@ -33,7 +33,7 @@ export default function HeroSection() {
             <div className="bg-gradient-to-tr from-primary to-secondary rounded-full p-1 shadow-xl">
               <div className="bg-background rounded-full p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+                  src="/images/me.jpeg"
                   alt="Sunita Kumari"
                   className="rounded-full w-full h-full object-cover aspect-square"
                 />

@@ -7,19 +7,19 @@ import { ArrowRight, Github, ExternalLink } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "E-commerce Dashboard",
-    description: "A responsive admin dashboard for an e-commerce platform with analytics, user management, and inventory tracking features.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    liveLink: "#",
-    githubLink: "#",
+    title: "Connect Me ",
+    description: "Built a video calling and Audio calling platform using React,Node js,MongoDb,Typescript,express Js,and Zego Cloud to connect users randomly for real-time video and audio chats, with user login and room-based interaction",
+    image: "/images/connectme.png",
+    tags: ["React", "TypeScript", "Node Js","MongoDb"],
+    liveLink: "https://connect-me-roan.vercel.app/",
+    githubLink: "https://github.com/sunitakumari22/connectMe",
     category: "web"
   },
   {
     id: 2,
-    title: "Financial App UI",
-    description: "A modern UI design for a financial application with transaction history, budget tracking, and investment insights.",
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+    title: "Siya Tech",
+    description: "Developed 'Siya Technology' – a responsive web application for an educational institute",
+    image: "/images/siyaTech.png",
     tags: ["Angular", "PrimeNG", "Chart.js"],
     liveLink: "#",
     githubLink: "#",
