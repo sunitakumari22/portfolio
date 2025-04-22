@@ -11,18 +11,29 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
 
-app.post("/message", async (req, res) => {
+app.get("/", async (req, res) => {
+    res.send("The server is up and running");
+});
+
+
+// API for message
+app.post("/api/message", async (req, res) => {
     let data = new message(req.body);
     let result = await data.save();
-    console.log(req.body);
+    // console.log(req.body);
     res.send(req.body);
 });
 
-app.get("/messageList", async (req, res) => {
-    let data = await message.find();
-    res.send(data);
-    console.log("data", data);
+app.get("/api/messageList", async (req, res) => {
+    try {
+        let data = await message.find().limit(50); 
+        res.send(data);
+    } catch (error) {
+        console.error("Database query error:", error);
+        res.status(500).send({ error: "Internal Server Error" });
+    }
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

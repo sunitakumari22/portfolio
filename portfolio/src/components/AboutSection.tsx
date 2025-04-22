@@ -48,7 +48,7 @@ export default function AboutSection() {
               </div>
               <h3 className="text-xl font-semibold mb-2">About Me</h3>
               <p className="text-muted-foreground">
-                I'm a passionate <strong>MEAN Stack Developer</strong> with expertise in building dynamic and scalable web applications.
+                I'm a passionate <strong>MEAN & MERN Stack Developer</strong> with expertise in building dynamic and scalable web applications.
                 Currently, I work at <strong>Pyxis Blu Infotech</strong>, where I develop high-performance solutions using <strong>MongoDB, Express.js, Angular, and Node.js</strong>.
                 I have a strong foundation in <strong>JavaScript, TypeScript, HTML, CSS, and PrimeNG</strong>
               </p>
@@ -64,7 +64,7 @@ export default function AboutSection() {
               <h3 className="text-xl font-semibold mb-2">My Expertise</h3>
 
               <ul className="text-muted-foreground list-disc pl-5 mt-2 space-y-1">
-                <li><strong>Frontend Development:</strong>  <strong>Angular, TypeScript, HTML, CSS, and PrimeNG</strong>.</li>
+                <li><strong>Frontend Development:</strong>  <strong>Angular,React, TypeScript, HTML, CSS, and PrimeNG</strong>.</li>
                 <li><strong>Backend Development:</strong> <strong>Node.js, Express.js, and RESTful APIs</strong>.</li>
                 <li><strong>Database Management:</strong> <strong>MongoDB</strong></li>
 
@@ -94,11 +94,11 @@ export default function AboutSection() {
           <div>
             <h3 className="text-2xl font-semibold mb-4">Who I Am</h3>
             <p className="text-muted-foreground mb-4">
-              I'm Sunita Kumari, a dedicated <strong>MEAN Stack Developer</strong> with a passion for building scalable and high-performance web applications.
-              Currently working at <strong>Pyxis Blu Infotech</strong>, I specialize in developing dynamic full-stack applications using <strong>MongoDB, Express.js, Angular, and Node.js</strong>.
+              I'm Sunita Kumari, a dedicated <strong>MEAN & MERN Stack Developer</strong> with a passion for building scalable and high-performance web applications.
+              Currently working at <strong>Pyxis Blu Infotech</strong>, I specialize in developing dynamic full-stack applications using <strong>MongoDB, Express.js, Angular,React, and Node.js</strong>.
             </p>
             <p className="text-muted-foreground mb-4">
-              My expertise lies in building **scalable and high-performance full-stack applications** using the **MEAN stack (MongoDB, Express.js, Angular, and Node.js)**.
+              My expertise lies in building **scalable and high-performance full-stack applications** using the **MEAN & MERN stack (MongoDB, Express.js, Angular,React and Node.js)**.
               I develop secure and efficient backends with **Node.js and Express.js**, while ensuring seamless, responsive frontend experiences with **Angular and TypeScript**.
               I focus on **RESTful APIs, database optimization, and seamless frontend-backend integration** to create dynamic web applications.
             </p>
