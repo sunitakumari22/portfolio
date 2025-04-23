@@ -20,19 +20,19 @@ const projects = [
     title: "Siya Tech",
     description: "Developed 'Siya Technology' – a responsive web application for an educational institute",
     image: "/images/siyaTech.png",
-    tags: ["Angular", "PrimeNG", "Chart.js"],
-    liveLink: "#",
-    githubLink: "#",
+    tags: ["React", "TypeScript", "Node Js","MongoDb"],
+    liveLink: "https://siya-technologies.vercel.app/",
+    githubLink: "https://github.com/sunitakumari22/siyaTechnologies",
     category: "web"
   },
   {
     id: 3,
-    title: "Task Management System",
-    description: "A collaborative task management system with real-time updates, assignee tracking, and deadline management features.",
+    title: "Easy find",
+    description: "Developed a responsive local business directory website named Easy Find, inspired by Justdial, allowing users to search, filter, and contact service providers across various categories using React,JavaScript,Node Js ,mongoDb,Exprass js",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     tags: ["React", "Node.js", "MongoDB"],
     liveLink: "#",
-    githubLink: "#",
+    githubLink: "https://github.com/sunitakumari22/Easyfind",
     category: "fullstack"
   },
   {
