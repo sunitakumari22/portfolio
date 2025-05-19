@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -22,32 +21,12 @@ export default function ContactSection() {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-    
-  //   // Simulating form submission
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //     toast({
-  //       title: "Message sent!",
-  //       description: "Thank you for your message. I'll get back to you soon.",
-  //     });
-  //     setFormData({
-  //       name: "",
-  //       email: "",
-  //       subject: "",
-  //       message: ""
-  //     });
-  //   }, 1000);
-  // };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
   
     try {
-      const response = await fetch("http://portfolio-yjwu.vercel.app/api/message", {
+      const response = await fetch("https://portfolio-yjwu.vercel.app/api/message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
