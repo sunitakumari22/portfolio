@@ -37,11 +37,11 @@ const projects = [
   },
   {
     id: 4,
-    title: "Portfolio Template",
+    title: "DevNest",
     description: "A customizable portfolio template for developers and designers to showcase their work and skills effectively.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    image: "/images/devnest.png",
     tags: ["HTML", "CSS", "JavaScript"],
-    liveLink: "#",
+    liveLink: "https://devnestpreview.vercel.app/",
     githubLink: "#",
     category: "web"
   }
