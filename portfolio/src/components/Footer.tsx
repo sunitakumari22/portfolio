@@ -17,7 +17,7 @@ export default function Footer() {
           
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a 
-              href="https://github.com" 
+              href="https://github.com/sunitakumari22" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="h-10 w-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
@@ -25,7 +25,7 @@ export default function Footer() {
               <Github size={20} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://linkedin.com/in/sunita-kumari1606" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="h-10 w-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
@@ -33,7 +33,7 @@ export default function Footer() {
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:contact@sunitakumari.com" 
+              href="mailto:angelsunita2468@gmail.com" 
               className="h-10 w-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={20} />

@@ -114,7 +114,7 @@ export default function ContactSection() {
               </a>
               
               <a 
-                href="https://linkedin.com/in/sunitakumari" 
+                href="https://linkedin.com/in/sunita-kumari1606" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl border border-muted bg-muted/20 hover:bg-muted/50 transition-all duration-300 group"
@@ -125,7 +125,7 @@ export default function ContactSection() {
                 <div>
                   <p className="font-medium text-foreground">LinkedIn</p>
                   <p className="text-muted-foreground group-hover:text-primary transition-colors">
-                    linkedin.com/in/sunitakumari
+                    https://linkedin.com/in/sunita-kumari1606
                   </p>
                 </div>
               </a>
