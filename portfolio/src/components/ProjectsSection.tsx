@@ -7,12 +7,12 @@ import { ArrowRight, Github, ExternalLink } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Connect Me ",
+    title: "Just Talk",
     description: "Built a video calling and Audio calling platform using React,Node js,MongoDb,Typescript,express Js,and Zego Cloud to connect users randomly for real-time video and audio chats, with user login and room-based interaction",
-    image: "/images/connectme.png",
+    image: "/images/justtalk.png",
     tags: ["React", "TypeScript", "Node Js","MongoDb"],
-    liveLink: "https://connect-me-roan.vercel.app/",
-    githubLink: "https://github.com/sunitakumari22/connectMe",
+    liveLink: "https://justtalkin.vercel.app/",
+    githubLink: "https://github.com/sunitakumari22/justTalk",
     category: "web"
   },
   {
