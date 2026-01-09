@@ -25,26 +25,26 @@ const projects = [
     githubLink: "https://github.com/sunitakumari22/siyaTechnologies",
     category: "web"
   },
-  {
-    id: 3,
-    title: "Easy find",
-    description: "Developed a responsive local business directory website named Easy Find, inspired by Justdial, allowing users to search, filter, and contact service providers across various categories using React,JavaScript,Node Js ,mongoDb,Exprass js",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    tags: ["Angular", "Node.js", "MongoDB", "Express.js","PrimeNG"],
-    liveLink: "#",
-    githubLink: "https://github.com/sunitakumari22/Easyfind",
-    category: "fullstack"
-  },
- {
-  id: 4,
-  title: "DevNest",
-  description: "DevNest is a developer-centric platform to store, manage, and showcase both public and private projects and APIs. It allows you to organize your entire development portfolio, test APIs in real time, and access them from anywhere. Public projects and APIs can be explored by others, while private ones remain secure and visible only to you.",
-  image: "/images/devnest.png",
-  tags: ["React", "Tailwind css", "Node.js", "Express.js", "MongoDB"],
-  liveLink: "https://devnestpreview.vercel.app/",
-  githubLink: "#",
-  category: "web"
-}
+//   {
+//     id: 3,
+//     title: "Easy find",
+//     description: "Developed a responsive local business directory website named Easy Find, inspired by Justdial, allowing users to search, filter, and contact service providers across various categories using React,JavaScript,Node Js ,mongoDb,Exprass js",
+//     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+//     tags: ["Angular", "Node.js", "MongoDB", "Express.js","PrimeNG"],
+//     liveLink: "#",
+//     githubLink: "https://github.com/sunitakumari22/Easyfind",
+//     category: "fullstack"
+//   },
+//  {
+//   id: 4,
+//   title: "DevNest",
+//   description: "DevNest is a developer-centric platform to store, manage, and showcase both public and private projects and APIs. It allows you to organize your entire development portfolio, test APIs in real time, and access them from anywhere. Public projects and APIs can be explored by others, while private ones remain secure and visible only to you.",
+//   image: "/images/devnest.png",
+//   tags: ["React", "Tailwind css", "Node.js", "Express.js", "MongoDB"],
+//   liveLink: "https://devnestpreview.vercel.app/",
+//   githubLink: "#",
+//   category: "web"
+// }
 
 ];
 
