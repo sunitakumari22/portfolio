@@ -105,39 +105,7 @@ export default function HeroSection() {
             </motion.div>
             
             {/* Social Links & Stats */}
-            <motion.div 
-              className="pt-8"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9, duration: 0.5 }}
-            >
-              <div className="flex items-center gap-6">
-                <div className="flex gap-4">
-                  <a href="#" className="group w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/10 to-violet-500/10 border border-indigo-500/30 hover:border-indigo-400 hover:bg-indigo-500/20 transition-all duration-300">
-                    <Github className="text-gray-300 group-hover:text-white transition-colors" size={20} />
-                  </a>
-                  <a href="#" className="group w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/10 to-violet-500/10 border border-indigo-500/30 hover:border-indigo-400 hover:bg-indigo-500/20 transition-all duration-300">
-                    <Linkedin className="text-gray-300 group-hover:text-white transition-colors" size={20} />
-                  </a>
-                  <a href="#" className="group w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/10 to-violet-500/10 border border-indigo-500/30 hover:border-indigo-400 hover:bg-indigo-500/20 transition-all duration-300">
-                    <Twitter className="text-gray-300 group-hover:text-white transition-colors" size={20} />
-                  </a>
-                </div>
-                
-                <div className="h-8 w-px bg-gradient-to-b from-transparent via-indigo-500/50 to-transparent"></div>
-                
-                <div className="flex items-center gap-6">
-                  <div className="text-center">
-                    <p className="text-2xl font-bold text-white">50+</p>
-                    <p className="text-sm text-gray-400">Projects</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-2xl font-bold text-white">3+</p>
-                    <p className="text-sm text-gray-400">Years Exp</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+            
           </motion.div>
           
           {/* Enhanced Image Section */}
