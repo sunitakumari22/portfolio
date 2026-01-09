@@ -3,13 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, Code, User } from "lucide-react";
 
 const skills = [
-  { name: "HTML5", category: "frontend" },
-  { name: "CSS3", category: "frontend" },
+   { name: "Angular", category: "frontend" },
+  { name: "PrimeNG", category: "frontend" },
   { name: "JavaScript", category: "frontend" },
   { name: "TypeScript", category: "frontend" },
   { name: "React", category: "frontend" },
-  { name: "Angular", category: "frontend" },
-  { name: "PrimeNG", category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
   { name: "Node.js", category: "backend" },
   { name: "Express.js", category: "backend" },
@@ -18,8 +16,8 @@ const skills = [
   { name: "Java", category: "backend" },
   { name: "ASP.NET", category: "backend" },
   { name: "MySQL", category: "backend" },
-  { name: "Git", category: "tools" },
-  { name: "VS Code", category: "tools" },
+  { name: "HTML5", category: "frontend" },
+  { name: "CSS3", category: "frontend" },
   { name: "RESTful APIs", category: "tools" },
 ];
 
@@ -77,7 +75,7 @@ export default function AboutSection() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Experience</h3>
               <p className="text-muted-foreground">
-                UI Developer at Pyxis Blu Infotech, building modern web applications.
+                Frontend Developer at Pyxis Blu Infotech, building modern web applications.
               </p>
               <p className="text-muted-foreground">
                 Former Full Stack Intern at Dzinex Technologies, Ranchi.
