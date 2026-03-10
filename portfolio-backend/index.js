@@ -11,8 +11,8 @@ app.use(express.json());
 connectDB();
 
 // Routes
-app.use("/api/message", require("./routes/messageRoutes"));
-app.use("/api/chat", require("./routes/chatRoutes"));
+app.use("/api/message", require("./routes/message.route"));
+app.use("/api/chat", require("./routes/chat.route"));
 
 // Test
 app.get("/", (req, res) => res.send("AI Portfolio Assistant Backend is running!"));
