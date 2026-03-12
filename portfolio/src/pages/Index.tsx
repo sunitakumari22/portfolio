@@ -7,8 +7,11 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import AiChat from "@/ai/aiChat";
+import { useState, useRef, useEffect } from "react";
 
 const Index = () => {
+    const [aiOpen, setAiOpen] = useState(false);
   return (
     <ThemeProvider defaultTheme="light">
       <div className="min-h-screen flex flex-col">
@@ -16,9 +19,12 @@ const Index = () => {
         <main>
           <HeroSection />
           <AboutSection />
-          <ProjectsSection />
           <ExperienceSection />
+          <ProjectsSection />
+          
           <ContactSection />
+          <AiChat isOpen={aiOpen} setIsOpen={setAiOpen} />
+
         </main>
         <Footer />
       </div>

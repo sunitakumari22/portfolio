@@ -1,125 +1,242 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Briefcase, CalendarDays, CheckCircle, ChevronRight, MoveRight } from "lucide-react";
+import { Briefcase, MapPin, CalendarDays, CheckCircle, ChevronRight, MoveRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTheme } from "./ThemeProvider";
 
 const experiences = [
-{
-  id: 1,
-  company: "Pyxis Blu Infotech",
-  role: "Frontend Developer",
-  period: "May 2024 - Present",
-  description:
-    "Crafting modern, scalable interfaces using Angular and React for real-world applications in the education sector. Key contributor to major university platforms and CRM systems.",
-  responsibilities: [
-    "Developing responsive UIs with Angular, React, PrimeNG, and Tailwind CSS",
-    "Frontend development for Sarla Birla University CRM and official website",
-    "Building modules for university campus management and SBPS school platform",
-    "Integrating RESTful APIs and ensuring smooth frontend-backend communication",
-    "Collaborating with design and backend teams for consistent UI/UX",
-    "Optimizing performance, accessibility, and cross-browser compatibility"
-  ],
-  color: "bg-gradient-to-br from-indigo-600 to-violet-600"
-},
-
-
+  {
+    id: 1,
+    company: "Pyxis Blu Infotech",
+    role: "Frontend Developer",
+    period: "May 2024 - Present",
+    badge: "Current",
+    badgeColor:
+      "text-indigo-500 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 border-indigo-200 dark:border-indigo-500/30",
+    borderColor: "border-indigo-400 dark:border-indigo-500",
+    iconColor:
+      "bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 text-indigo-500 dark:text-indigo-400",
+    description:
+      "Crafting modern, scalable interfaces using Angular and React for real-world applications in the education sector. Key contributor to major university platforms and CRM systems.",
+    responsibilities: [
+      "Developed reusable UI components using Angular and React, improving code maintainability and reducing development time by 30%",
+      "Built and maintained frontend for Sarla Birla University's official website and CRM system using Angular, PrimeNG, and Tailwind CSS",
+      "Developed modules for university campus management system and SBPS school platform, supporting 5,000+ users",
+      "Integrated 20+ RESTful APIs with frontend interfaces, ensuring seamless frontend-backend communication",
+      "Optimized application performance by implementing lazy loading and code splitting, reducing load time by 40%",
+      "Collaborated with design and backend teams in Agile sprints to deliver production-ready features on schedule",
+      "Ensured cross-browser compatibility and WCAG accessibility standards across all delivered modules",
+    ],
+  },
   {
     id: 2,
     company: "Dzinex Technologies",
-    role: "Intern of Full Stack Developer",
+    role: "Full Stack Developer Intern",
     period: "April 2023 - June 2023",
-    description: "Worked on multiple client projects, developing frontend solutions with a focus on responsive design and cross-browser compatibility.",
+    badge: "Internship",
+    badgeColor:
+      "text-violet-500 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 border-violet-200 dark:border-violet-500/30",
+    borderColor: "border-violet-400 dark:border-violet-500",
+    iconColor:
+      "bg-violet-50 dark:bg-violet-500/10 border border-violet-100 dark:border-violet-500/20 text-violet-500 dark:text-violet-400",
+    description:
+      "Worked on full stack web development projects using the MERN stack with a focus on responsive design and cross-browser compatibility.",
     responsibilities: [
-      "Built responsive web applications using HTML, CSS, and JavaScript",
-      "Integrated RESTful APIs with frontend interfaces",
-      "Implemented design systems for consistent UI/UX",
-      "Collaborated in agile development teams"
+      "Built responsive web applications using HTML5, CSS3, JavaScript, and React for multiple client projects",
+      "Developed RESTful APIs using Node.js and Express.js, integrated with MongoDB for data persistence",
+      "Implemented responsive UI designs using CSS Flexbox and Grid, ensuring compatibility across all major browsers",
+      "Collaborated with a team of developers in an Agile environment, participating in daily standups and sprint reviews",
+      "Wrote clean, maintainable code following best practices and contributed to code reviews",
     ],
-    color: "bg-gradient-to-br from-cyan-600 to-sky-600"
   },
- 
 ];
 
 export default function ExperienceSection() {
+  const { theme } = useTheme();
+
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 mb-4">
-            <Briefcase className="w-4 h-4 text-indigo-500" />
-            <span className="text-indigo-500 font-medium">Career Journey</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Professional Experience</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My career path through various roles in the tech industry, showcasing my growth and expertise in web development.
+    <section
+      id="experience"
+      className="relative py-10 md:py-32 px-6 md:px-10 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-500"
+    >
+      {/* ── Grid background ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            theme === "dark"
+              ? `linear-gradient(to right, rgba(99,102,241,0.04) 1px, transparent 1px),
+                 linear-gradient(to bottom, rgba(99,102,241,0.04) 1px, transparent 1px)`
+              : `linear-gradient(to right, rgba(0,0,0,0.025) 1px, transparent 1px),
+                 linear-gradient(to bottom, rgba(0,0,0,0.025) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
+      {theme === "dark" && (
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+      )}
+
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* ── Centered Section Heading ── */}
+        <motion.div
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-sm font-medium text-gray-400 dark:text-gray-500 tracking-widest uppercase mb-3">
+            Career Journey
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {experiences.map((experience) => (
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white leading-tight">
+            Professional{" "}
+            <span className="text-gray-300 dark:text-gray-600">Experience</span>
+          </h2>
+          <div className="flex items-center justify-center gap-4 mt-4">
+            <div className="h-px w-12 bg-gray-300 dark:bg-gray-700" />
+            <span className="text-gray-400 dark:text-gray-600 text-xs tracking-widest uppercase">
+              Growth · Impact · Expertise
+            </span>
+            <div className="h-px w-12 bg-gray-300 dark:bg-gray-700" />
+          </div>
+        </motion.div>
+
+        {/* ── Experience Cards ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {experiences.map((exp, i) => (
             <motion.div
-              key={experience.id}
-              initial={{ opacity: 0, y: 20 }}
+              key={exp.id}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="relative"
+              transition={{ duration: 0.5, delay: i * 0.12 }}
+              className={`
+                rounded-2xl border p-6 flex flex-col gap-5 group
+                transition-all duration-300 hover:shadow-lg hover:-translate-y-1
+                ${
+                  theme === "dark"
+                    ? "bg-gray-900 border-gray-800 hover:border-indigo-500/40 hover:shadow-indigo-500/10"
+                    : "bg-white border-gray-100 hover:border-indigo-200 hover:shadow-indigo-50"
+                }
+              `}
             >
-              {/* Gradient accent */}
-              <div className={`absolute top-0 left-0 w-1 h-full ${experience.color} rounded-tl-lg rounded-bl-lg`}></div>
-              
-              <Card className="card-hover h-full ml-3 border-l-0 rounded-l-none">
-                <CardHeader className="pb-3">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${experience.color}`}>
-                          <Briefcase className="text-white w-5 h-5" />
-                        </div>
-                        <CardTitle className="text-xl">{experience.role}</CardTitle>
-                      </div>
-                      <p className="text-lg font-medium text-muted-foreground">{experience.company}</p>
-                    </div>
-                    <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-muted">
-                      <CalendarDays className="w-4 h-4 text-muted-foreground" />
-                      <span className="text-sm text-muted-foreground">{experience.period}</span>
+              {/* ── Card Header ── */}
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  {/* Icon */}
+                  <div
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${exp.iconColor}`}
+                  >
+                    <Briefcase size={18} />
+                  </div>
+
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-800 dark:text-gray-100 leading-tight">
+                      {exp.role}
+                    </h3>
+                    <div className="flex items-center gap-1 mt-0.5">
+                      <MapPin size={11} className="text-gray-400 dark:text-gray-500" />
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                        {exp.company}
+                      </span>
                     </div>
                   </div>
-                </CardHeader>
-                
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    {experience.description}
-                  </p>
-                  
-                  <div className="border-t border-border pt-4">
-                    <h4 className="font-medium mb-3 flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-emerald-500" />
-                      Key Responsibilities
-                    </h4>
-                    <ul className="space-y-2">
-                      {experience.responsibilities.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <ChevronRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-muted-foreground">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                </div>
+
+                {/* Badge + Period */}
+                <div className="flex flex-col items-end gap-1.5 shrink-0">
+                  <span
+                    className={`text-[10px] font-semibold uppercase tracking-widest px-2.5 py-0.5 rounded-full border ${exp.badgeColor}`}
+                  >
+                    {exp.badge}
+                  </span>
+                  <div className="flex items-center gap-1">
+                    <CalendarDays size={11} className="text-gray-400 dark:text-gray-500" />
+                    <span className="text-xs text-gray-400 dark:text-gray-500">
+                      {exp.period}
+                    </span>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
+
+              {/* ── Divider ── */}
+              <div className="h-px w-full bg-gray-100 dark:bg-gray-800" />
+
+              {/* ── Description ── */}
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
+                {exp.description}
+              </p>
+
+              {/* ── Responsibilities ── */}
+              <div
+                className={`rounded-xl p-4 border-l-2 ${exp.borderColor}
+                  ${
+                    theme === "dark"
+                      ? "bg-gray-800/50"
+                      : "bg-gray-50"
+                  }
+                `}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <CheckCircle
+                    size={14}
+                    className="text-emerald-500 dark:text-emerald-400 shrink-0"
+                  />
+                  <span className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-300">
+                    Key Responsibilities
+                  </span>
+                </div>
+
+                <ul className="space-y-2">
+                  {exp.responsibilities.map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      initial={{ opacity: 0, x: -8 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: idx * 0.05 }}
+                      className="flex items-start gap-2"
+                    >
+                      <ChevronRight
+                        size={14}
+                        className="text-indigo-400 dark:text-indigo-500 mt-0.5 shrink-0"
+                      />
+                      <span className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                        {item}
+                      </span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </div>
-        
-        <div className="text-center mt-16">
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white font-medium hover:from-indigo-700 hover:to-violet-700 transition-all"
-          >
-            Download Full Resume
-            <MoveRight className="w-4 h-4" />
-          </a>
-        </div>
+
+        {/* ── Download Resume CTA ── */}
+<motion.div
+  className="text-center mt-14"
+  initial={{ opacity: 0, y: 12 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+>
+  <a
+    href="/sunitaCVVvvv.pdf"
+    download="Sunita_Kumar_Resume.pdf"
+    className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border
+      transition-all duration-300 group
+      ${
+        theme === "dark"
+          ? "border-gray-700 text-gray-300 hover:border-indigo-500 hover:text-white hover:bg-indigo-500/10"
+          : "border-gray-200 text-gray-600 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50"
+      }`}
+  >
+    <MoveRight
+      size={15}
+      className="group-hover:translate-x-1 transition-transform duration-200"
+    />
+    Download Full Resume
+  </a>
+</motion.div>
       </div>
     </section>
   );
