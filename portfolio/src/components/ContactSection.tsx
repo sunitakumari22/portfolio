@@ -8,8 +8,8 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email Me",
-    value: "angelsunita2468@gmail.com",
-    href: "mailto:angelsunita2468@gmail.com",
+    value: "officialsunita1606@gmail.com",
+    href: "mailto:officialsunita1606@gmail.com",
     badgeColor:
       "bg-indigo-50 dark:bg-indigo-500/10 border-indigo-100 dark:border-indigo-500/20 text-indigo-500 dark:text-indigo-400",
     hoverBorder: "hover:border-indigo-200 dark:hover:border-indigo-500/40",

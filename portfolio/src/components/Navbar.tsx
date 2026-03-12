@@ -179,7 +179,7 @@ export default function Navbar({ onAiClick }: { onAiClick?: () => void }) {
           >
             <ul className="flex flex-col py-5 px-6 space-y-4">
               <NavLink href="#home" title="Home" onClick={closeMenu} />
-              <NavLink href="#projects" title="Playground" onClick={closeMenu} />
+              <NavLink href="#projects" title="Projects" onClick={closeMenu} />
               <NavLink href="#about" title="About me" onClick={closeMenu} />
               <NavLink href="#experience" title="Experience" onClick={closeMenu} />
               <NavLink href="#contact" title="Contact" onClick={closeMenu} />

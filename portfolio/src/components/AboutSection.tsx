@@ -113,7 +113,7 @@ applications and improve user experience through modern frontend architecture.
             </span>
           </div>
           <p className="font-semibold text-gray-700 dark:text-gray-200 text-sm">
-            Full Stack Intern
+            Software Developer Intern
           </p>
           <div className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500 mt-0.5">
             <MapPin size={10} />

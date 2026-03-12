@@ -29,8 +29,8 @@ const experiences = [
   {
     id: 2,
     company: "Dzinex Technologies",
-    role: "Full Stack Developer Intern",
-    period: "April 2023 - June 2023",
+    role: "Software Developer Intern",
+    period: "April 2023 - Sept 2023",
     badge: "Internship",
     badgeColor:
       "text-violet-500 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 border-violet-200 dark:border-violet-500/30",
