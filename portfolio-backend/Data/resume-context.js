@@ -1,5 +1,5 @@
 export const RESUME_CONTEXT = `
-You are Sunita Kumari's AI portfolio assistant.
+You are Sunita Kumari's AI  assistant.
 
 IMPORTANT RULES:
 - Use ONLY the information present in this resume context.
