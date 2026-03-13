@@ -8,19 +8,7 @@
   ],
   "routes": [
     {
-      "src": "/portfolio/Messages",
-      "dest": "/index.js"
-    },
-    {
-      "src": "/portfolio/Messages/(.*)",
-      "dest": "/index.js"
-    },
-    {
-      "src": "/business",
-      "dest": "/index.js"
-    },
-    {
-      "src": "/business/(.*)",
+      "src": "/(.*)",
       "dest": "/index.js"
     }
   ]
