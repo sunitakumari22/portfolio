@@ -7,6 +7,12 @@ import MessageRoutes from "./routes/message.routes.js";
 import chatRoutes from "./routes/chat.routes.js";
 
 dotenv.config();
+console.log("ENV GEMINI_API_KEY exists?", !!process.env.GEMINI_API_KEY);
+console.log("ENV GEMINI_API_KEY length:", process.env.GEMINI_API_KEY?.length);
+console.log("ENV GEMINI_API_KEY start/end:", 
+  process.env.GEMINI_API_KEY?.slice(0, 6),
+  process.env.GEMINI_API_KEY?.slice(-6)
+);
 const app = express();
 app.use(cors());
 app.use(express.json());

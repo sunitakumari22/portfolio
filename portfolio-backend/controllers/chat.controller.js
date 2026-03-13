@@ -1,35 +1,36 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+import { RESUME_CONTEXT } from "../Data/resume-context.js";
 
 export const chatWithAI = async (req, res) => {
   try {
-    const { message } = req.body;
-    console.log("API KEY:", process.env.GEMINI_API_KEY);
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) return res.status(500).json({ error: "GEMINI_API_KEY missing" });
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const { message } = req.body;
+    if (!message || typeof message !== "string") {
+      return res.status(400).json({ error: "message is required (string)" });
+    }
+
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     const prompt = `
-You are an AI assistant for Sunita's portfolio.
-
-About Sunita:
-- Full Stack Developer
-- Skills: Angular, React, Node.js, MongoDB
-- Works at PixelsBlue Solutions
-- Built hostel management system and CRM modules.
+${RESUME_CONTEXT}
 
 User question: ${message}
 
-Answer clearly and professionally.
+Answer rules:
+- Answer based on resume context only.
+- If not found, say you don't have that information in the resume.
+- If user asks "Tell me about you" / "Introduce yourself", give a short summary from resume.
 `;
 
     const result = await model.generateContent(prompt);
-    const response = result.response.text();
+    const reply = result.response.text();
 
-    res.json({ reply: response });
-
+    return res.json({ reply });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "AI response failed" });
+    console.error("Gemini error:", error);
+    return res.status(500).json({ error: "AI response failed" });
   }
 };
