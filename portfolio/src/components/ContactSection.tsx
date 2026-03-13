@@ -58,7 +58,7 @@ export default function ContactSection() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://portfolio-yjwu.vercel.app/api/message",
+        "https://portfolio-yjwu.vercel.app/api/portfolio/Messages",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
