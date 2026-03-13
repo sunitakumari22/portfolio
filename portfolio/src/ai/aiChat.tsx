@@ -237,7 +237,7 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
                 </button>
               </div>
               <p className={`text-[10px] text-center mt-2 ${theme === "dark" ? "text-gray-600" : "text-gray-400"}`}>
-                Powered by Gemini AI · Press Enter to send  {/* ✅ updated label */}
+                 Press Enter to send  {/* ✅ updated label */}
               </p>
             </div>
           </motion.div>
