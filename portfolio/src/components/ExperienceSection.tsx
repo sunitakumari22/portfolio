@@ -220,7 +220,7 @@ export default function ExperienceSection() {
   transition={{ duration: 0.5 }}
 >
   <a
-    href="/sunitaCVVvvv.pdf"
+    href="/sunitaCVV.pdf"
     download="Sunita_Kumar_Resume.pdf"
     className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border
       transition-all duration-300 group
