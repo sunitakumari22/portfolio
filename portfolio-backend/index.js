@@ -1,12 +1,13 @@
 
 import express from "express";
 import dotenv from "dotenv";
+dotenv.config();
 import cors from "cors";
 import connectDB from "./config/db.js";
 import MessageRoutes from "./routes/message.routes.js";
 import chatRoutes from "./routes/chat.routes.js";
 
-dotenv.config();
+
 console.log("ENV GEMINI_API_KEY exists?", !!process.env.GEMINI_API_KEY);
 console.log("ENV GEMINI_API_KEY length:", process.env.GEMINI_API_KEY?.length);
 console.log("ENV GEMINI_API_KEY start/end:", 

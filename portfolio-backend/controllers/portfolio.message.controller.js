@@ -1,11 +1,12 @@
 import Message from "../models/message.js";
 import mongoose from "mongoose";
+import { sendNewMessageEmail } from "../utills/sendEmail.js"; 
 
-// Add Message
 export const addMessage = async (req, res) => {
   try {
     const data = new Message(req.body);
     const result = await data.save();
+    await sendNewMessageEmail(result);
 
     res.status(201).json(result);
   } catch (error) {
@@ -14,7 +15,6 @@ export const addMessage = async (req, res) => {
   }
 };
 
-// Get Message List
 export const getMessageList = async (req, res) => {
   try {
     const data = await Message.find().limit(50);
@@ -24,6 +24,7 @@ export const getMessageList = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
 export const getMessageById = async (req, res) => {
   try {
     const data = await Message.findById(req.params.id);
