@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { Github, Linkedin, Mail, ArrowDown, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
@@ -5,19 +6,27 @@ import { useTheme } from "./ThemeProvider";
 export default function HeroSection() {
   const { theme } = useTheme();
 
+  // Drag boundary container
+  const dragAreaRef = useRef<HTMLDivElement | null>(null);
+
+  const bubbleBase =
+    "absolute z-20 w-11 h-11 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform";
+
   return (
     <section
       id="home"
       className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-white dark:bg-gray-950 px-6 md:px-10 transition-colors duration-500"
     >
+      {/* background grid */}
       <div
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         style={{
-          backgroundImage: theme === "dark"
-            ? `linear-gradient(to right, rgba(99,102,241,0.08) 1px, transparent 1px),
-               linear-gradient(to bottom, rgba(99,102,241,0.08) 1px, transparent 1px)`
-            : `linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
-               linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px)`,
+          backgroundImage:
+            theme === "dark"
+              ? `linear-gradient(to right, rgba(99,102,241,0.08) 1px, transparent 1px),
+                 linear-gradient(to bottom, rgba(99,102,241,0.08) 1px, transparent 1px)`
+              : `linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+                 linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px)`,
           backgroundSize: "60px 60px",
         }}
       />
@@ -34,7 +43,9 @@ export default function HeroSection() {
             y1="100%"
             x2={`${100 + offset}%`}
             y2="0"
-            stroke={theme === "dark" ? "rgba(99,102,241,0.08)" : "rgba(0,0,0,0.04)"}
+            stroke={
+              theme === "dark" ? "rgba(99,102,241,0.08)" : "rgba(0,0,0,0.04)"
+            }
             strokeWidth="1"
           />
         ))}
@@ -48,89 +59,104 @@ export default function HeroSection() {
         </>
       )}
 
-      {/* ── Floating Social Bubbles ── */}
-      {/* LinkedIn */}
-      <motion.a
-        href="https://linkedin.com/in/sunita-kumari1606"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="LinkedIn"
-        className="absolute left-[6%] top-[54%] z-20 w-11 h-11 rounded-full bg-[#0077B5] flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.0, duration: 0.4 }}
-        style={{ animation: "float 5s ease-in-out infinite" }}
-      >
-        <Linkedin size={18} className="text-white" />
-      </motion.a>
+      {/* 
+        Drag area (IMPORTANT):
+        - relative so absolute children stay inside
+        - inset-0 so it covers whole section
+      */}
+      <div ref={dragAreaRef} className="absolute inset-0 z-20">
+        {/* LinkedIn (draggable) */}
+        <motion.a
+          href="https://linkedin.com/in/sunita-kumari1606"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+          className={`${bubbleBase} bg-[#0077B5] left-[6%] top-[54%]`}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.0, duration: 0.4 }}
+          // DRAG
+          drag
+          dragConstraints={dragAreaRef}
+          dragElastic={0.15}
+          dragMomentum={false}
+          whileDrag={{ scale: 1.15, cursor: "grabbing" }}
+          style={{ cursor: "grab" }}
+          // NOTE: float animation remove kar do for smooth dragging
+        >
+          <Linkedin size={18} className="text-white" />
+        </motion.a>
 
-      {/* Gmail */}
-      <motion.a
-        href="mailto:officialsunita1606@gmail.com"
-        title="Email"
-        className={`absolute right-[12%] top-[42%] z-20 w-11 h-11 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform
-          ${theme === "dark" ? "bg-gray-800 border border-gray-700" : "bg-white border border-gray-200"}`}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.1, duration: 0.4 }}
-        style={{ animation: "float 4s ease-in-out infinite 0.5s" }}
-      >
-        <Mail size={18} className="text-red-500" />
-      </motion.a>
+        {/* Gmail (draggable) */}
+        <motion.a
+          href="mailto:officialsunita1606@gmail.com"
+          title="Email"
+          className={`${bubbleBase} right-[12%] top-[42%] ${
+            theme === "dark"
+              ? "bg-gray-800 border border-gray-700"
+              : "bg-white border border-gray-200"
+          }`}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.1, duration: 0.4 }}
+          drag
+          dragConstraints={dragAreaRef}
+          dragElastic={0.15}
+          dragMomentum={false}
+          whileDrag={{ scale: 1.15, cursor: "grabbing" }}
+          style={{ cursor: "grab" }}
+        >
+          <Mail size={18} className="text-red-500" />
+        </motion.a>
 
-      {/* GitHub */}
-      <motion.a
-        href="https://github.com/sunitakumari22"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="GitHub"
-        className={`absolute right-[6%] top-[24%] z-20 w-11 h-11 rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform
-          ${theme === "dark" ? "bg-white" : "bg-gray-900"}`}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.2, duration: 0.4 }}
-        style={{ animation: "float 6s ease-in-out infinite 1s" }}
-      >
-        <Github size={18} className={theme === "dark" ? "text-gray-900" : "text-white"} />
-      </motion.a>
+        {/* GitHub (draggable) */}
+        <motion.a
+          href="https://github.com/sunitakumari22"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="GitHub"
+          className={`${bubbleBase} right-[6%] top-[24%] ${
+            theme === "dark" ? "bg-white" : "bg-gray-900"
+          }`}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.4 }}
+          drag
+          dragConstraints={dragAreaRef}
+          dragElastic={0.15}
+          dragMomentum={false}
+          whileDrag={{ scale: 1.15, cursor: "grabbing" }}
+          style={{ cursor: "grab" }}
+        >
+          <Github
+            size={18}
+            className={theme === "dark" ? "text-gray-900" : "text-white"}
+          />
+        </motion.a>
 
-      {/* Twitter */}
-      <motion.a
-        href="https://twitter.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Twitter"
-        className="absolute left-[14%] top-[22%] z-20 w-10 h-10 rounded-full bg-sky-500 flex items-center justify-center shadow-md hover:scale-110 transition-transform"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.3, duration: 0.4 }}
-        style={{ animation: "float 5.5s ease-in-out infinite 0.8s" }}
-      >
-        <Twitter size={16} className="text-white" />
-      </motion.a>
-
-      {/* Pink blob */}
-      <motion.div
-        className="absolute right-[28%] top-[18%] z-20 w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 shadow-md pointer-events-none"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.9, duration: 0.4 }}
-        style={{ animation: "float 4s ease-in-out infinite" }}
-      />
-
-      {/* Ring */}
-      <motion.div
-        className={`absolute right-[3%] bottom-[28%] z-20 w-8 h-8 rounded-full border-2 pointer-events-none
-          ${theme === "dark" ? "border-indigo-500/40" : "border-gray-300"}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.3, duration: 0.4 }}
-      />
+        {/* Twitter (draggable) */}
+        <motion.a
+          href="https://twitter.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Twitter"
+          className={`${bubbleBase} w-10 h-10 bg-sky-500 left-[14%] top-[22%]`}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.3, duration: 0.4 }}
+          drag
+          dragConstraints={dragAreaRef}
+          dragElastic={0.15}
+          dragMomentum={false}
+          whileDrag={{ scale: 1.15, cursor: "grabbing" }}
+          style={{ cursor: "grab" }}
+        >
+          <Twitter size={16} className="text-white" />
+        </motion.a>
+      </div>
 
       {/* ── Main Content ── */}
       <div className="max-w-7xl mx-auto w-full relative z-10 pt-24 pb-16">
-
-        {/* Small name label */}
         <motion.p
           className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-6 tracking-wide"
           initial={{ opacity: 0, y: 10 }}
@@ -140,7 +166,6 @@ export default function HeroSection() {
           Sunita Kumari
         </motion.p>
 
-        {/* Giant title */}
         <motion.h1
           className="text-[13vw] md:text-[11vw] lg:text-[10vw] font-light leading-[0.9] tracking-tight text-gray-900 dark:text-white transition-colors duration-500"
           initial={{ opacity: 0, y: 30 }}
@@ -152,8 +177,6 @@ export default function HeroSection() {
             Developer
           </span>
         </motion.h1>
-
-      
       </div>
 
       {/* Scroll indicator */}
@@ -173,14 +196,18 @@ export default function HeroSection() {
           <ArrowDown size={16} className="text-gray-400 dark:text-gray-600" />
         </motion.div>
       </motion.div>
-
-      {/* Float animation */}
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
-        }
-      `}</style>
+      <motion.div
+        className="absolute right-[28%] top-[18%] z-20 w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-rose-500 shadow-md"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.9, duration: 0.4 }}
+        drag
+        dragConstraints={dragAreaRef}
+        dragElastic={0.15}
+        dragMomentum={false}
+        whileDrag={{ scale: 1.15, cursor: "grabbing" }}
+        style={{ cursor: "grab" }}
+      />
     </section>
   );
 }

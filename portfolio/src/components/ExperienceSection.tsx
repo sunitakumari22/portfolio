@@ -15,16 +15,28 @@ const experiences = [
     iconColor:
       "bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 text-indigo-500 dark:text-indigo-400",
     description:
-      "Crafting modern, scalable interfaces using Angular and React for real-world applications in the education sector. Key contributor to major university platforms and CRM systems.",
+      "Frontend Engineer with 2+ years of experience building scalable enterprise web applications using Angular,React and TypeScript. Skilled in developing reusable UI components, optimizing frontend performance, and creating responsive and accessible user interfaces. Experienced in collaborating with Agile teams to deliver production-ready applications and improve user experience through modern frontend architecture.",
     responsibilities: [
-      "Developed reusable UI components using Angular and React, improving code maintainability and reducing development time by 30%",
-      "Built and maintained frontend for Sarla Birla University's official website and CRM system using Angular, PrimeNG, and Tailwind CSS",
-      "Developed modules for university campus management system and SBPS school platform, supporting 5,000+ users",
-      "Integrated 20+ RESTful APIs with frontend interfaces, ensuring seamless frontend-backend communication",
-      "Optimized application performance by implementing lazy loading and code splitting, reducing load time by 40%",
-      "Collaborated with design and backend teams in Agile sprints to deliver production-ready features on schedule",
-      "Ensured cross-browser compatibility and WCAG accessibility standards across all delivered modules",
-    ],
+  "Developed multiple modules for a university CRM system using Angular 18, including Examination Reports, Finance Transactions, and the complete Student Master module for both Admin and Student interfaces",
+  
+  "Designed and implemented reporting and transaction workflows by integrating RESTful APIs, enabling efficient management of academic records and financial operations",
+  
+  "Handled production deployments and resolved critical issues during release cycles, ensuring system stability and smooth functioning across examination and student management modules",
+  
+  "Built a Hostel and Hotel Management System using React, focusing on clean UI design and role-based workflows to enhance user experience",
+  
+  "Developed modular and reusable frontend architecture using Angular generic components and React Hooks, improving code maintainability and reducing duplication across multiple modules",
+  
+  "Implemented responsive and accessible user interfaces following modern UI/UX standards, ensuring cross-device compatibility and usability",
+  
+  "Optimized frontend performance using lazy loading, modular architecture, and efficient API data handling, improving application speed and scalability",
+  
+  "Independently developed and managed HR Management and Placement modules (Frontend + Backend), demonstrating end-to-end ownership",
+  
+  "Maintained and enhanced PyxisBlu official website (Next.js) and SBPS website (React), handling performance optimization, content updates, and responsive UI improvements",
+  
+  "Acted as Task Board Owner and Stand-up Lead, managing sprint planning, tracking tasks, and facilitating Agile ceremonies for efficient team collaboration"
+]
   },
   {
     id: 2,
@@ -101,7 +113,7 @@ export default function ExperienceSection() {
         </motion.div>
 
         {/* ── Experience Cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
           {experiences.map((exp, i) => (
             <motion.div
               key={exp.id}
@@ -220,8 +232,8 @@ export default function ExperienceSection() {
   transition={{ duration: 0.5 }}
 >
   <a
-    href="/sunitaCVV.pdf"
-    download="Sunita_Kumar_Resume.pdf"
+    href="/sunita'sResume.pdf"
+    download="Sunita_Kumari_Resume.pdf"
     className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border
       transition-all duration-300 group
       ${

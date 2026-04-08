@@ -59,7 +59,7 @@ export default function Navbar({ onAiClick }: { onAiClick?: () => void }) {
             href="#"
             className="text-sm font-semibold text-gray-800 dark:text-gray-100 tracking-wide hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
-            Home
+            Sunita Kumari
           </a>
 
           {/* Desktop Nav */}
