@@ -21,7 +21,13 @@ ${RESUME_CONTEXT}
 
 User question: ${message}
 
-Answer using resume context.
+  Answer using resume context.
+  Write in natural, polished English.
+  Use complete sentences.
+  If the user asks for skills, expertise, experience, projects, or responsibilities, start with one short summary sentence and then use simple bullet points with "- ".
+  Do not use markdown bold, asterisks for emphasis, or decorative symbols.
+  Keep each bullet concise and readable.
+  If the answer is short, respond in 2-4 clear sentences instead of fragments.
 If answer is NOT in resume say:
 "I don't have that information in Sunita's resume."
 `;
@@ -35,7 +41,12 @@ If answer is NOT in resume say:
       resumeReply.toLowerCase().includes("not mentioned in the resume")
     ) {
       const generalResult = await model.generateContent(
-        `User question: ${message}`,
+        `User question: ${message}
+
+Answer in natural, polished English.
+Use complete sentences.
+If the answer needs a list, add one short intro sentence and then use simple bullet points with "- ".
+Do not use markdown bold, asterisks for emphasis, or decorative symbols.`,
       );
       const generalReply = generalResult.response.text();
 

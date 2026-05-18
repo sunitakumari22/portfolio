@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, Sparkles, Bot, User, Loader2 } from "lucide-react";
+import { X, Send, Bot, User, Loader2 } from "lucide-react";
 import { useTheme } from "../components/ThemeProvider";
 
 type Message = {
@@ -13,13 +13,69 @@ type AiChatProps = {
   setIsOpen: (val: boolean) => void;
 };
 
+const WELCOME_MESSAGE =
+  "Hi! I'm Sunita's AI assistant. Ask me anything about her skills, projects, or experience.";
+
+const assistantAccent = "from-sky-500 to-cyan-500";
+
+function renderMessageContent(content: string) {
+  const lines = content
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line, index, arr) => line.length > 0 || (index > 0 && arr[index - 1].length > 0));
+
+  const elements: JSX.Element[] = [];
+  let bulletItems: string[] = [];
+
+  const flushBulletItems = () => {
+    if (!bulletItems.length) return;
+
+    elements.push(
+      <ul key={`list-${elements.length}`} className="mt-2 list-disc space-y-1 pl-5">
+        {bulletItems.map((item, index) => (
+          <li key={`item-${index}`}>{formatInlineText(item)}</li>
+        ))}
+      </ul>,
+    );
+
+    bulletItems = [];
+  };
+
+  lines.forEach((line) => {
+    if (!line) {
+      flushBulletItems();
+      return;
+    }
+
+    if (/^[-*]\s+/.test(line)) {
+      bulletItems.push(line.replace(/^[-*]\s+/, ""));
+      return;
+    }
+
+    flushBulletItems();
+    elements.push(
+      <p key={`paragraph-${elements.length}`} className="leading-relaxed">
+        {formatInlineText(line)}
+      </p>,
+    );
+  });
+
+  flushBulletItems();
+
+  return elements.length ? elements : <p className="leading-relaxed">{formatInlineText(content)}</p>;
+}
+
+function formatInlineText(text: string) {
+  const normalized = text.replace(/\*\*(.*?)\*\*/g, "$1").trim();
+  return normalized;
+}
+
 export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
   const { theme } = useTheme();
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content:
-        "Hi! 👋 I'm Sunita's AI assistant. Ask me anything about her skills, projects, or experience!",
+      content: WELCOME_MESSAGE,
     },
   ]);
   const [input, setInput] = useState("");
@@ -92,8 +148,7 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
     setMessages([
       {
         role: "assistant",
-        content:
-          "Hi! 👋 I'm Sunita's AI assistant. Ask me anything about her skills, projects, or experience!",
+        content: WELCOME_MESSAGE,
       },
     ]);
   };
@@ -121,8 +176,8 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
               ${theme === "dark" ? "border-gray-700 bg-gray-900" : "border-gray-100 bg-white"}`}
             >
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shadow-sm">
-                  <Sparkles size={14} className="text-white" />
+                <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${assistantAccent} flex items-center justify-center shadow-sm`}>
+                  <Bot size={14} className="text-white" />
                 </div>
                 <div>
                   <p className={`text-sm font-semibold leading-tight ${theme === "dark" ? "text-white" : "text-gray-900"}`}>
@@ -162,7 +217,7 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
                 >
                   <div
                     className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 mt-0.5 shadow-sm
-                    ${msg.role === "assistant" ? "bg-gradient-to-br from-indigo-500 to-violet-600" : theme === "dark" ? "bg-gray-700" : "bg-gray-200"}`}
+                    ${msg.role === "assistant" ? `bg-gradient-to-br ${assistantAccent}` : theme === "dark" ? "bg-gray-700" : "bg-gray-200"}`}
                   >
                     {msg.role === "assistant" ? (
                       <Bot size={12} className="text-white" />
@@ -174,13 +229,13 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
                   <div
                     className={`max-w-[78%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed shadow-sm
                     ${msg.role === "user"
-                        ? "bg-gradient-to-br from-indigo-600 to-violet-600 text-white rounded-tr-sm"
+                        ? "bg-gradient-to-br from-sky-500 to-cyan-500 text-white rounded-tr-sm"
                         : theme === "dark"
                           ? "bg-gray-800 text-gray-200 rounded-tl-sm border border-gray-700"
                           : "bg-white text-gray-700 rounded-tl-sm border border-gray-100"
                     }`}
                   >
-                    {msg.content}
+                    <div className="space-y-2">{renderMessageContent(msg.content)}</div>
                   </div>
                 </div>
               ))}
@@ -188,7 +243,7 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
               {/* Typing indicator */}
               {isLoading && (
                 <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0">
+                  <div className={`w-7 h-7 rounded-full bg-gradient-to-br ${assistantAccent} flex items-center justify-center shrink-0`}>
                     <Bot size={12} className="text-white" />
                   </div>
                   <div className={`px-4 py-3 rounded-2xl rounded-tl-sm shadow-sm border ${theme === "dark" ? "bg-gray-800 border-gray-700" : "bg-white border-gray-100"}`}>
@@ -196,7 +251,7 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
                       {[0, 0.2, 0.4].map((delay, i) => (
                         <motion.div
                           key={i}
-                          className="w-1.5 h-1.5 rounded-full bg-indigo-400"
+                          className="w-1.5 h-1.5 rounded-full bg-sky-400"
                           animate={{ y: [0, -4, 0] }}
                           transition={{ repeat: Infinity, duration: 0.8, delay }}
                         />
@@ -212,7 +267,7 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
             {/* Input */}
             <div className={`px-3 py-3 border-t shrink-0 ${theme === "dark" ? "border-gray-700 bg-gray-900" : "border-gray-100 bg-white"}`}>
               <div className={`flex items-center gap-2 rounded-xl border px-3 py-2 transition-colors
-                ${theme === "dark" ? "bg-gray-800 border-gray-700 focus-within:border-indigo-500" : "bg-gray-50 border-gray-200 focus-within:border-indigo-400"}`}
+                ${theme === "dark" ? "bg-gray-800 border-gray-700 focus-within:border-sky-500" : "bg-gray-50 border-gray-200 focus-within:border-sky-400"}`}
               >
                 <input
                   ref={inputRef}
@@ -227,7 +282,7 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
                 <button
                   onClick={sendMessage}
                   disabled={!input.trim() || isLoading}
-                  className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:from-indigo-700 hover:to-violet-700 transition-all shrink-0"
+                  className="w-7 h-7 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-500 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:from-sky-600 hover:to-cyan-600 transition-all shrink-0"
                 >
                   {isLoading ? (
                     <Loader2 size={13} className="text-white animate-spin" />
@@ -254,11 +309,11 @@ export default function AiChat({ isOpen, setIsOpen }: AiChatProps) {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="fixed bottom-6 right-6 z-[100] w-14 h-14 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 flex items-center justify-center shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-shadow"
+            className="fixed bottom-6 right-6 z-[100] w-14 h-14 rounded-full bg-gradient-to-br from-sky-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 transition-shadow"
             title="Ask AI"
           >
-            <Sparkles size={22} className="text-white" />
-            <span className="absolute w-full h-full rounded-full bg-indigo-500/30 animate-ping" />
+            <Bot size={22} className="text-white" />
+            <span className="absolute w-full h-full rounded-full bg-sky-500/30 animate-ping" />
           </motion.button>
         )}
       </AnimatePresence>

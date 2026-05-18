@@ -118,21 +118,7 @@ export default function Navbar({ onAiClick }: { onAiClick?: () => void }) {
             </li>
 
             {/* ── AI Button in Navbar ── */}
-            <li>
-              <button
-                onClick={onAiClick}
-                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-sm font-medium
-                  bg-gradient-to-r from-indigo-500/10 to-violet-500/10
-                  border border-indigo-400/30 dark:border-indigo-500/40
-                  text-indigo-600 dark:text-indigo-400
-                  hover:from-indigo-500/20 hover:to-violet-500/20
-                  hover:border-indigo-400/60
-                  transition-all duration-200"
-              >
-                <Sparkles size={13} />
-                Ask AI
-              </button>
-            </li>
+          
 
             {/* Theme Toggle */}
             <li>

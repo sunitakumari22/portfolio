@@ -6,46 +6,57 @@ import { useTheme } from "./ThemeProvider";
 const projects = [
   {
     id: 1,
-    title: "Just Talk",
+    title: "Centralized Email Service Platform",
     description:
-      "Built a video calling and audio calling platform using React, Node.js, MongoDB, TypeScript, Express.js, and Zego Cloud to connect users randomly for real-time video and audio chats, with user login and room-based interaction.",
-    image: "/images/justtalk.png",
-    tags: ["React", "TypeScript", "Node.js", "MongoDB"],
-    liveLink: "https://justtalkin.vercel.app/",
-    githubLink: "https://github.com/sunitakumari22/justTalk",
-    category: "web",
+      "Built a centralized multi-tenant email service platform enabling Super Admins to manage organizations, generate admin credentials, and support scalable partner-based SMTP integrations for external projects. Implemented secure email delivery architecture using organization keys, partner codes, role-based access control, and protected storage for sensitive credentials and API keys.",
+
+    image: "/emailservice.png",
+
+    tags: [
+      "Node.js",
+      "Express.js",
+      "Redis",
+      "SMTP",
+      "REST API",
+      "Authentication",
+    ],
+
+    liveLink: "#",
+
+    githubLink: "#",
+
+    category: "backend",
   },
+
   {
     id: 2,
-    title: "Siya Tech",
+    title: "Just Talk (Video Chat Application)",
     description:
-      "Developed 'Siya Technology' – a responsive web application for an educational institute, featuring course listings, contact forms, and a clean modern UI.",
-    image: "/images/siyaTech.png",
-    tags: ["React", "TypeScript", "Node.js", "MongoDB"],
-    liveLink: "https://siya-technologies.vercel.app/",
-    githubLink: "https://github.com/sunitakumari22/siyaTechnologies",
-    category: "web",
+      "Built a real-time video chat application supporting 1:1 and group calls using ZEGO Cloud with low-latency communication and secure authentication. Developed responsive UI components and seamless real-time interaction workflows using the MERN stack.",
+
+    image: "/justtalkin.png",
+
+    tags: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "ZEGO Cloud",
+      "TypeScript",
+    ],
+
+    liveLink: "https://justtalkin.vercel.app/",
+
+    githubLink: "https://github.com/sunitakumari22/justTalk",
+
+    category: "fullstack",
   },
-  // {
-  //   id: 3,
-  //   title: "Easy Find",
-  //   description: "Developed a responsive local business directory website named Easy Find, inspired by Justdial, allowing users to search, filter, and contact service providers across various categories.",
-  //   image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-  //   tags: ["Angular", "Node.js", "MongoDB", "Express.js", "PrimeNG"],
-  //   liveLink: "#",
-  //   githubLink: "https://github.com/sunitakumari22/Easyfind",
-  //   category: "fullstack",
-  // },
-  // {
-  //   id: 4,
-  //   title: "DevNest",
-  //   description: "DevNest is a developer-centric platform to store, manage, and showcase both public and private projects and APIs.",
-  //   image: "/images/devnest.png",
-  //   tags: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
-  //   liveLink: "https://devnestpreview.vercel.app/",
-  //   githubLink: "#",
-  //   category: "web",
-  // },
+
+ 
+
+ 
+
+  
 ];
 
 type Category = "all" | "web" | "fullstack" | "mobile";

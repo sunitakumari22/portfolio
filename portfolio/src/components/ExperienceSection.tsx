@@ -5,7 +5,7 @@ import { useTheme } from "./ThemeProvider";
 const experiences = [
   {
     id: 1,
-    company: "Pyxis Blu Infotech",
+    company: "PyxisBlu Solutions Pvt Ltd",
     role: "Frontend Developer",
     period: "May 2024 - Present",
     badge: "Current",
@@ -14,33 +14,36 @@ const experiences = [
     borderColor: "border-indigo-400 dark:border-indigo-500",
     iconColor:
       "bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 text-indigo-500 dark:text-indigo-400",
+
     description:
-      "Frontend Engineer with 2+ years of experience building scalable enterprise web applications using Angular,React and TypeScript. Skilled in developing reusable UI components, optimizing frontend performance, and creating responsive and accessible user interfaces. Experienced in collaborating with Agile teams to deliver production-ready applications and improve user experience through modern frontend architecture.",
+      "Frontend Developer with 2+ years of experience building scalable enterprise applications using Angular, React, and TypeScript. Experienced in developing CRM systems, reusable UI architectures, REST API integrations, and performance-optimized web applications serving 5000+ users.",
+
     responsibilities: [
-  "Developed multiple modules for a university CRM system using Angular 18, including Examination Reports, Finance Transactions, and the complete Student Master module for both Admin and Student interfaces",
-  
-  "Designed and implemented reporting and transaction workflows by integrating RESTful APIs, enabling efficient management of academic records and financial operations",
-  
-  "Handled production deployments and resolved critical issues during release cycles, ensuring system stability and smooth functioning across examination and student management modules",
-  
-  "Built a Hostel and Hotel Management System using React, focusing on clean UI design and role-based workflows to enhance user experience",
-  
-  "Developed modular and reusable frontend architecture using Angular generic components and React Hooks, improving code maintainability and reducing duplication across multiple modules",
-  
-  "Implemented responsive and accessible user interfaces following modern UI/UX standards, ensuring cross-device compatibility and usability",
-  
-  "Optimized frontend performance using lazy loading, modular architecture, and efficient API data handling, improving application speed and scalability",
-  
-  "Independently developed and managed HR Management and Placement modules (Frontend + Backend), demonstrating end-to-end ownership",
-  
-  "Maintained and enhanced PyxisBlu official website (Next.js) and SBPS website (React), handling performance optimization, content updates, and responsive UI improvements",
-  
-  "Acted as Task Board Owner and Stand-up Lead, managing sprint planning, tracking tasks, and facilitating Agile ceremonies for efficient team collaboration"
-]
+      "Developed and maintained 5+ enterprise-grade modules for a university CRM platform serving 5000+ users using Angular 18, TypeScript, and REST API integrations",
+
+      "Improved frontend performance and scalability through lazy loading, code splitting, optimized API handling, and reusable component architecture, enhancing application responsiveness and reducing load time",
+
+      "Built responsive, cross-browser compatible, and performance-optimized user interfaces across desktop, tablet, and mobile devices, ensuring consistent UX and accessibility",
+
+      "Developed React-based Hostel and Hotel Management applications featuring role-based workflows, reusable UI architecture, dynamic dashboards, and workflow-driven interfaces",
+
+      "Worked on HR, Hostel, and Placement management systems with scalable frontend architecture and optimized state management",
+
+      "Identified and resolved critical production issues during release cycles through debugging, error handling, and performance optimization, ensuring application stability and reliability",
+
+      "Collaborated with cross-functional teams in Agile development environments, participating in sprint planning, stand-ups, and feature delivery",
+
+      "Took ownership of sprint task tracking, daily stand-ups, and feature delivery, ensuring timely resolution of blockers and smooth Agile execution",
+
+      "Integrated RESTful APIs and handled dynamic data management for reporting systems, transaction workflows, and enterprise dashboards",
+
+      "Contributed to reusable component libraries and modern frontend architecture to improve maintainability and reduce code duplication",
+    ],
   },
+
   {
     id: 2,
-    company: "Dzinex Technologies",
+    company: "Dzinex Technology",
     role: "Software Developer Intern",
     period: "April 2023 - Sept 2023",
     badge: "Internship",
@@ -49,14 +52,22 @@ const experiences = [
     borderColor: "border-violet-400 dark:border-violet-500",
     iconColor:
       "bg-violet-50 dark:bg-violet-500/10 border border-violet-100 dark:border-violet-500/20 text-violet-500 dark:text-violet-400",
+
     description:
-      "Worked on full stack web development projects using the MERN stack with a focus on responsive design and cross-browser compatibility.",
+      "Worked on full-stack web application development with responsive frontend design and REST API integration while collaborating with senior developers.",
+
     responsibilities: [
-      "Built responsive web applications using HTML5, CSS3, JavaScript, and React for multiple client projects",
-      "Developed RESTful APIs using Node.js and Express.js, integrated with MongoDB for data persistence",
-      "Implemented responsive UI designs using CSS Flexbox and Grid, ensuring compatibility across all major browsers",
-      "Collaborated with a team of developers in an Agile environment, participating in daily standups and sprint reviews",
-      "Wrote clean, maintainable code following best practices and contributed to code reviews",
+      "Assisted in developing full-stack web applications with responsive frontend interfaces and REST API integrations",
+
+      "Worked with Node.js and Express.js to fetch, manage, and process application data efficiently",
+
+      "Integrated backend APIs with frontend applications and improved application functionality",
+
+      "Debugged frontend and backend issues in collaboration with senior developers to improve application performance and stability",
+
+      "Built responsive UI components using modern web technologies and ensured cross-browser compatibility",
+
+      "Collaborated with the development team in Agile workflows, contributing to feature development and issue resolution",
     ],
   },
 ];
@@ -232,7 +243,7 @@ export default function ExperienceSection() {
   transition={{ duration: 0.5 }}
 >
   <a
-    href="/sunita'sResume.pdf"
+    href="/images/sunitaResume.pdf"
     download="Sunita_Kumari_Resume.pdf"
     className={`inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium border
       transition-all duration-300 group

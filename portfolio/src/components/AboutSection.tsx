@@ -4,22 +4,62 @@ import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 
 const skills = [
+  // Frontend
   { name: "Angular", category: "frontend" },
-  { name: "PrimeNG", category: "frontend" },
   { name: "React", category: "frontend" },
+  { name: "Next.js", category: "frontend" },
   { name: "TypeScript", category: "frontend" },
-  { name: "JavaScript", category: "frontend" },
+  { name: "JavaScript (ES6+)", category: "frontend" },
+  { name: "RxJS", category: "frontend" },
+  { name: "Redux", category: "frontend" },
+  { name: "TanStack Query", category: "frontend" },
+  { name: "PrimeNG", category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
+  { name: "Bootstrap", category: "frontend" },
   { name: "HTML5", category: "frontend" },
   { name: "CSS3", category: "frontend" },
+
+  // Backend
   { name: "Node.js", category: "backend" },
   { name: "Express.js", category: "backend" },
-  { name: "MongoDB", category: "backend" },
-  { name: "MySQL", category: "backend" },
+  { name: "ASP.NET", category: "backend" },
   { name: "Python", category: "backend" },
   { name: "Java", category: "backend" },
-  { name: "ASP.NET", category: "backend" },
+
+  // Database & Caching
+  { name: "MongoDB", category: "database" },
+  { name: "SQL Server", category: "database" },
+  { name: "MySQL", category: "database" },
+  { name: "Redis", category: "database" },
+
+  // Tools & Libraries
+  { name: "Git", category: "tools" },
+  { name: "GitHub", category: "tools" },
+  { name: "VS Code", category: "tools" },
+  { name: "Postman", category: "tools" },
+  { name: "JWT Authentication", category: "tools" },
   { name: "RESTful APIs", category: "tools" },
+  { name: "Cloudinary", category: "tools" },
+  { name: "Babel", category: "tools" },
+  { name: "Vite", category: "tools" },
+  { name: "npm", category: "tools" },
+
+  // Testing
+  { name: "Jest", category: "testing" },
+
+  // DevOps & Deployment
+  { name: "Docker", category: "devops" },
+  { name: "Kubernetes", category: "devops" },
+  { name: "Vercel", category: "devops" },
+  { name: "Netlify", category: "devops" },
+
+  // Concepts
+  { name: "Responsive Web Design", category: "concepts" },
+  { name: "REST API Integration", category: "concepts" },
+  { name: "Reusable Component Architecture", category: "concepts" },
+  { name: "Performance Optimization", category: "concepts" },
+  { name: "Cross-Browser Compatibility", category: "concepts" },
+  { name: "Agile Development", category: "concepts" },
 ];
 
 const cards = [
@@ -30,102 +70,16 @@ const cards = [
       <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed text-center">
         I'm a passionate{" "}
         <span className="font-semibold text-gray-700 dark:text-gray-200">
-          Software Developer
+          Frontend Developer 
         </span>{" "}
-         with 2+ years of experience building scalable enterprise web applications using Angular,React
-and TypeScript. Skilled in developing reusable UI components, optimizing frontend performance, and creating
-responsive and accessible user interfaces. Experienced in collaborating with Agile teams to deliver production-ready
-applications and improve user experience through modern frontend architecture.
+       with 2+ years of experience building scalable enterprise applications using Angular, React, and
+TypeScript. Experienced in developing CRM systems, reusable UI architectures, REST API integrations, and
+performance-optimized web applications serving 5000+ users.
+
       </p>
     ),
   },
-  {
-    icon: Code,
-    title: "My Expertise",
-    content: (
-      <div className="text-sm text-gray-500 dark:text-gray-400 space-y-3 w-full mt-1">
-        {[
-          {
-            label: "Frontend",
-            value: "Angular, React, TypeScript, PrimeNG, HTML5, CSS3, Tailwind CSS",
-            color: "bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400",
-          },
-          {
-            label: "Backend",
-            value: "Node.js, Express.js, RESTful APIs, ASP.NET",
-            color: "bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400",
-          },
-          {
-            label: "Database",
-            value: "MongoDB, MySQL",
-            color: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-          },
-          {
-            label: "Languages",
-            value: "JavaScript, TypeScript, Python, Java",
-            color: "bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400",
-          },
-        ].map((item) => (
-          <div key={item.label} className="flex flex-col gap-1">
-            <span
-              className={`text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full w-fit ${item.color}`}
-            >
-              {item.label}
-            </span>
-            <span className="text-xs leading-relaxed pl-1">{item.value}</span>
-          </div>
-        ))}
-      </div>
-    ),
-  },
-  {
-    icon: Briefcase,
-    title: "Experience",
-    content: (
-      <div className="text-sm text-gray-500 dark:text-gray-400 space-y-4 w-full mt-1">
-        {/* Current */}
-        <div className="relative pl-3 border-l-2 border-indigo-400 dark:border-indigo-500">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-indigo-500 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 px-2 py-0.5 rounded-full">
-              Current
-            </span>
-          </div>
-          <p className="font-semibold text-gray-700 dark:text-gray-200 text-sm">
-            Frontend Developer
-          </p>
-          <div className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500 mt-0.5">
-            <MapPin size={10} />
-            <span>Pyxis Blu Infotech</span>
-          </div>
-          <p className="text-xs mt-1 leading-relaxed">
-            Building modern, scalable web applications using Angular, React,
-            Node.js, and MongoDB.
-          </p>
-        </div>
 
-        <div className="h-px w-full bg-gray-100 dark:bg-gray-800" />
-
-        {/* Previous */}
-        <div className="relative pl-3 border-l-2 border-violet-400 dark:border-violet-500">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-violet-500 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 px-2 py-0.5 rounded-full">
-              Internship
-            </span>
-          </div>
-          <p className="font-semibold text-gray-700 dark:text-gray-200 text-sm">
-            Software Developer Intern
-          </p>
-          <div className="flex items-center gap-1 text-xs text-gray-400 dark:text-gray-500 mt-0.5">
-            <MapPin size={10} />
-            <span>Dzinex Technologies, Ranchi</span>
-          </div>
-          <p className="text-xs mt-1 leading-relaxed">
-            Worked on full stack web development projects using the MERN stack.
-          </p>
-        </div>
-      </div>
-    ),
-  },
 ];
 
 type Category = "all" | "frontend" | "backend" | "tools";
@@ -204,7 +158,7 @@ export default function AboutSection() {
         </motion.div>
 
         {/* ── Cards ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+        <div className="grid grid-cols-1 gap-6 mb-20">
           {cards.map((card, i) => {
             const Icon = card.icon;
             return (
@@ -224,22 +178,7 @@ export default function AboutSection() {
                   }
                 `}
               >
-                {/* Icon */}
-                <div
-                  className={`w-10 h-10 rounded-xl flex items-center justify-center
-                  ${
-                    theme === "dark"
-                      ? "bg-indigo-500/10 border border-indigo-500/20"
-                      : "bg-indigo-50 border border-indigo-100"
-                  }`}
-                >
-                  <Icon size={18} className="text-indigo-500 dark:text-indigo-400" />
-                </div>
-
-                {/* Title — centered */}
-                <h3 className="text-base font-semibold text-gray-800 dark:text-gray-100 text-center">
-                  {card.title}
-                </h3>
+           
 
                 {/* Content */}
                 <div className="w-full">{card.content}</div>
