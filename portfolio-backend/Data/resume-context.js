@@ -8,136 +8,89 @@ IMPORTANT RULES:
 
 ========================
 SUNITA KUMARI
-Frontend Developer — Angular — React — TypeScript
+Software Engineer — React — TypeScript — Node.js — PostgreSQL — Distributed Systems
 ========================
 
 Contact
 Phone: 8987736795
 Email: officialsunita1606@gmail.com
-LinkedIn: https://www.linkedin.com/in/sunita-kumari1606/
+LinkedIn: https://www.linkedin.com/in/sunita-kumari1606
 GitHub: https://github.com/sunitakumari22
 
 ========================
 PROFESSIONAL SUMMARY
 ========================
 
-Sunita Kumari is a Frontend Developer with 2+ years of experience building scalable enterprise applications using Angular, React, and TypeScript. She has experience developing CRM systems, reusable UI architectures, REST API integrations, and performance-optimized web applications serving 5000+ users.
-
-She specializes in:
-- Building responsive and accessible web applications
-- Frontend performance optimization
-- Reusable component architecture
-- REST API integrations
-- Cross-browser compatibility
-- Agile development workflows
-
-========================
-WORK EXPERIENCE
-========================
-
-Company: PyxisBlu Solutions Pvt Ltd
-Role: Frontend Developer
-Location: Ranchi, Jharkhand
-Duration: May 2024 – Present
-
-Responsibilities:
-- Developed and maintained 5+ enterprise-grade modules for a university CRM platform serving 5000+ users using Angular 18, TypeScript, and REST API integrations.
-- Worked on Examination Reports, Finance Transactions, Student Master modules, and reporting dashboards.
-- Improved frontend performance using lazy loading, code splitting, optimized API handling, and reusable component architecture.
-- Built responsive, cross-browser compatible, and performance-optimized user interfaces across desktop, tablet, and mobile devices.
-- Developed React-based Hostel and Hotel Management applications with role-based workflows and dynamic dashboards.
-- Worked on HR, Hostel, and Placement management systems.
-- Identified and resolved critical production issues during release cycles through debugging and performance optimization.
-- Collaborated with Agile teams during sprint planning, stand-ups, and feature delivery.
-- Took ownership of sprint task tracking and daily stand-ups as Task Board Owner and Stand-up Lead.
-- Contributed to reusable frontend architecture to improve maintainability and reduce code duplication.
-
-Company: Dzinex Technology
-Role: Software Developer Intern
-Location: Ranchi, Jharkhand
-Duration: April 2023 – September 2023
-
-Responsibilities:
-- Assisted in developing full-stack web applications with responsive frontend interfaces and REST API integrations.
-- Worked with Node.js and Express.js to fetch and manage application data.
-- Integrated backend APIs with frontend applications.
-- Debugged frontend and backend issues to improve application performance and stability.
-- Collaborated with senior developers in Agile workflows and feature development.
+Software Engineer with 2+ years of experience designing and shipping scalable multi-tenant SaaS platforms, distributed microservices, and enterprise applications using React, TypeScript, Node.js, Fastify, and PostgreSQL. Proven expertise in client-facing requirement discovery, high-throughput API design, asynchronous processing, and relational database tuning. Hands-on experience architecting 0-to-1 systems and integrating AI/LLM data extraction pipelines.
 
 ========================
 TECHNICAL SKILLS
 ========================
 
+Languages:
+TypeScript, JavaScript (ES6+), Python, SQL, HTML5, CSS3
+
 Frontend:
-Angular, React, Next.js, TypeScript, JavaScript (ES6+), RxJS, Redux, TanStack Query, PrimeNG, Tailwind CSS, Bootstrap, HTML5, CSS3
+React.js, Next.js, Angular, TanStack Query, Redux, Tailwind CSS, PrimeNG
 
-Backend:
-Node.js, Express.js, ASP.NET, Python, Java
+Backend & APIs:
+Node.js, Express.js, Fastify, REST APIs, WebSockets, API Gateway, Microservices Architecture
 
-Database & Caching:
-MongoDB, SQL Server, Redis, MySQL
+Databases & Caching:
+PostgreSQL, MongoDB, Redis (Pub/Sub & Queues), Database Optimization, Indexing
 
-Testing:
-Jest
+Architecture & Systems:
+Multi-Tenant SaaS, System Design (HLD/LLD), Asynchronous Processing, RBAC, Caching
 
-Developer Tools & Libraries:
-Git, GitHub, VS Code, Postman, JWT Authentication, Cloudinary, Babel, Vite, npm
+AI & Tooling:
+LLM Integration, Structured Data Extraction, Docker, Git, Postman, Jest, Razorpay, Easebuzz, SMTP
 
-DevOps / Deployment:
-Docker, Kubernetes, Vercel, Netlify
+========================
+EXPERIENCE
+========================
 
-Concepts:
-REST API Integration, Responsive Web Design, Reusable Component Architecture, Performance Optimization, Cross-Browser Compatibility, Agile Development
+Company: PyxisBlu Solutions Pvt. Ltd.
+Role: Software Engineer
+Location: Ranchi, Jharkhand
+Duration: May 2024 – Present
+
+Overview:
+Drove on-site client discovery and full-lifecycle engineering across 5+ enterprise platforms and infrastructure services.
+
+1. Multi-Tenant Fitness & Wellness Platform (0-to-1 SaaS)
+Tech Stack: Fastify, Node.js, PostgreSQL, React, WebSockets, Docker
+Key Achievements & Responsibilities:
+- Backend Architecture & Core Engineering: Owned 100% of the backend engineering from scratch, designing a multi-tenant SaaS architecture with strict tenant data isolation, centralized RBAC, client onboarding, and automated subscription billing.
+- Resilient Tiered Search & AI Pipeline: Engineered a high-throughput, tiered food-search service querying local PostgreSQL cache, sequentially falling back to 3 external APIs upon cache misses, and integrated an LLM pipeline for structured data extraction with DB persistence.
+- Real-Time Communication & Frontend Integration: Built a low-latency WebSocket service for live client-to-coach messaging and progress tracking, while contributing to key React frontend dashboards for seamless API integration.
+
+2. Centralized Email & Notification Infrastructure Platform
+Tech Stack: Node.js, Express.js, MongoDB, Redis, Docker, SMTP
+Key Achievements & Responsibilities:
+- Designed a multi-tenant messaging microservice delivering RESTful APIs for transactional emails, OTP dispatch, and bulk batch processing across decoupled tenant applications.
+- Implemented an encrypted credential management framework storing partner SMTP configurations securely and provisioning authenticated API keys for client integrations.
+- Built an asynchronous Redis-backed message queue to ingest and process high-volume requests with zero data loss.
+
+3. Enterprise Products & EdTech Suite
+Tech Stack: Angular, React, Node.js, Express.js, MongoDB, PrimeNG, TanStack Query, Tailwind CSS, Python
+Key Achievements & Responsibilities:
+- NCore Pro University CRM (Angular, PrimeNG): Conducted on-site client discovery to map university workflows, then owned Frontend Engineering for core modules—Finance, Examination, and Student Lifecycle—building dynamic forms, RBAC, and billing dashboards.
+- Content & Management System (CMS) (React, Express.js, MongoDB): Re-architected a legacy HR module by redesigning system architecture and database schema following direct client consultation. Executed zero-loss data migration and delivered full-stack HR/Placement pipelines supporting 10,000+ daily transactions.
+- School ERP System (React, TanStack Query, Tailwind CSS): Architected administrative interfaces optimizing server-state caching with TanStack Query to eliminate duplicate API requests and improve client-side rendering speed.
+- Hotel/Hostel Booking Platform: Drove on-site stakeholder requirement gathering to architect and deliver an end-to-end booking system handling room inventory allocation, billing workflows, and Easebuzz payment gateway integration.
+- Operational Automation: Developed Python automation scripts for document batch compression and operational reporting, cutting manual overhead.
 
 ========================
 EDUCATION
 ========================
 
-Master of Computer Applications (MCA)
-Chandigarh University (Online)
-July 2025 – July 2027
+Master of Computer Applications (MCA) (Online)
+Chandigarh University, Chandigarh, India
+2025 – 2027
 
 Bachelor of Computer Applications (BCA)
-Ranchi Women's College
-August 2021 – May 2024
-
-========================
-PROJECTS
-========================
-
-Project: Centralized Email Service Platform
-Tech Stack: Node.js, Express.js, Redis, SMTP
-
-Description:
-- Built a centralized multi-tenant email service platform for scalable partner-based SMTP integrations.
-- Enabled Super Admins to manage organizations and generate admin credentials.
-- Implemented secure email delivery architecture using organization keys, partner codes, and role-based access control.
-- Protected sensitive credentials and API keys with secure storage architecture.
-
-Project: Just Talk (Video Chat Application)
-Tech Stack: MERN Stack, ZEGO Cloud
-
-Description:
-- Built a real-time video chat application supporting 1:1 and group calls.
-- Implemented low-latency communication with secure authentication.
-- Developed responsive UI components and seamless real-time interaction workflows.
-
-Live Demo:
-https://justtalkin.vercel.app/
-
-GitHub:
-https://github.com/sunitakumari22/justTalk
-
-Project: Personal Portfolio Website with AI Chatbot
-Tech Stack: MERN Stack, React, Node.js
-
-Description:
-- Built a modern developer portfolio website to showcase projects, technical skills, and work experience.
-- Integrated an AI-powered chatbot capable of responding to portfolio-related queries.
-- Focused on responsive UI design and modern frontend architecture.
-
-Live Demo:
-https://sunitaportfolio.vercel.app/
+Ranchi Women’s College, Ranchi, Jharkhand
+2021 – 2024
 
 ========================
 END OF RESUME

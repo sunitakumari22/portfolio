@@ -174,7 +174,7 @@ export default function HeroSection() {
         >
           <span className="block">Software</span>
           <span className="block text-right md:pl-16 text-gray-400 dark:text-gray-500">
-            Developer
+            Engineer
           </span>
         </motion.h1>
       </div>

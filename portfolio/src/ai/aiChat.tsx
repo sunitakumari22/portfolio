@@ -14,7 +14,7 @@ type AiChatProps = {
 };
 
 const WELCOME_MESSAGE =
-  "Hi! I'm Sunita's AI assistant. Ask me anything about her skills, projects, or experience.";
+  "Hi! I'm Sunita's AI assistant. Ask me anything about her skills, experience, or background.";
 
 const assistantAccent = "from-sky-500 to-cyan-500";
 

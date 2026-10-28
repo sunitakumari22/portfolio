@@ -1,38 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { useToast } from "@/hooks/use-toast";
-
-const contactLinks = [
-  {
-    icon: Mail,
-    label: "Email Me",
-    value: "officialsunita1606@gmail.com",
-    href: "mailto:officialsunita1606@gmail.com",
-    badgeColor:
-      "bg-indigo-50 dark:bg-indigo-500/10 border-indigo-100 dark:border-indigo-500/20 text-indigo-500 dark:text-indigo-400",
-    hoverBorder: "hover:border-indigo-200 dark:hover:border-indigo-500/40",
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    value: "github.com/sunitakumari22",
-    href: "https://github.com/sunitakumari22",
-    badgeColor:
-      "bg-violet-50 dark:bg-violet-500/10 border-violet-100 dark:border-violet-500/20 text-violet-500 dark:text-violet-400",
-    hoverBorder: "hover:border-violet-200 dark:hover:border-violet-500/40",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/sunita-kumari1606",
-    href: "https://linkedin.com/in/sunita-kumari1606",
-    badgeColor:
-      "bg-sky-50 dark:bg-sky-500/10 border-sky-100 dark:border-sky-500/20 text-sky-500 dark:text-sky-400",
-    hoverBorder: "hover:border-sky-200 dark:hover:border-sky-500/40",
-  },
-];
 
 export default function ContactSection() {
   const { theme } = useTheme();
@@ -101,7 +71,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 px-6 md:px-10 bg-white dark:bg-gray-950 overflow-hidden transition-colors duration-500"
+      className="relative py-20 md:py-32 px-6 md:px-10 bg-white dark:bg-gray-950 overflow-hidden transition-colors duration-500"
     >
       {/* ── Grid background ── */}
       <div
@@ -117,14 +87,13 @@ export default function ContactSection() {
         }}
       />
       {theme === "dark" && (
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
       )}
 
-      <div className="max-w-7xl mx-auto relative z-10">
-
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* ── Centered Section Heading ── */}
         <motion.div
-          className="mb-16 text-center"
+          className="mb-14 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -134,270 +103,165 @@ export default function ContactSection() {
             Say Hello
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white leading-tight">
-            Get In{" "}
-            <span className="text-gray-300 dark:text-gray-600">Touch</span>
+            Get In <span className="text-gray-300 dark:text-gray-600">Touch</span>
           </h2>
           <div className="flex items-center justify-center gap-4 mt-4">
             <div className="h-px w-12 bg-gray-300 dark:bg-gray-700" />
             <span className="text-gray-400 dark:text-gray-600 text-xs tracking-widest uppercase">
-              Open to Work · Freelance · Collaborate
+              Open to Work · Freelance · Collaboration
             </span>
             <div className="h-px w-12 bg-gray-300 dark:bg-gray-700" />
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-          {/* ── Left — Contact Info ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col gap-6"
-          >
-            {/* Info card */}
+        {/* ── Full-Width Centered Contact Form ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className={`rounded-3xl border p-8 md:p-12 transition-all duration-300 shadow-xl
+            ${
+              theme === "dark"
+                ? "bg-gray-900/90 border-gray-800 shadow-black/40"
+                : "bg-white border-gray-100 shadow-indigo-50/70"
+            }`}
+        >
+          {/* Form Header */}
+          <div className="flex flex-col items-center text-center mb-8">
             <div
-              className={`rounded-2xl border p-6 transition-all duration-300
+              className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4
                 ${
                   theme === "dark"
-                    ? "bg-gray-900 border-gray-800"
-                    : "bg-white border-gray-100"
+                    ? "bg-indigo-500/10 border border-indigo-500/20 text-indigo-400"
+                    : "bg-indigo-50 border border-indigo-100 text-indigo-500"
                 }`}
             >
-              {/* Icon */}
-              <div
-                className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4
-                  ${
-                    theme === "dark"
-                      ? "bg-indigo-500/10 border border-indigo-500/20"
-                      : "bg-indigo-50 border border-indigo-100"
-                  }`}
-              >
-                <Send size={18} className="text-indigo-500 dark:text-indigo-400" />
-              </div>
-
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
-                Let's Collaborate
-              </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-                I'm currently available for freelance work and open to full-time
-                opportunities. Feel free to reach out — I'll respond within{" "}
-                <span className="font-medium text-gray-700 dark:text-gray-200">
-                  24 hours
-                </span>
-                .
-              </p>
+              <Mail size={22} />
             </div>
-
-            {/* Contact link cards */}
-            <div className="flex flex-col gap-3">
-              {contactLinks.map((link, i) => {
-                const Icon = link.icon;
-                return (
-                  <motion.a
-                    key={link.label}
-                    href={link.href}
-                    target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.1 }}
-                    className={`flex items-center gap-4 p-4 rounded-2xl border
-                      transition-all duration-300 group
-                      hover:shadow-md hover:-translate-y-0.5
-                      ${link.hoverBorder}
-                      ${
-                        theme === "dark"
-                          ? "bg-gray-900 border-gray-800 hover:shadow-indigo-500/10"
-                          : "bg-white border-gray-100 hover:shadow-gray-100"
-                      }`}
-                  >
-                    {/* Icon bubble */}
-                    <div
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 border
-                        transition-transform duration-300 group-hover:scale-110
-                        ${link.badgeColor}`}
-                    >
-                      <Icon size={17} />
-                    </div>
-
-                    <div className="flex flex-col min-w-0">
-                      <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">
-                        {link.label}
-                      </span>
-                      <span className="text-xs text-gray-400 dark:text-gray-500 truncate">
-                        {link.value}
-                      </span>
-                    </div>
-
-                    {/* Arrow indicator */}
-                    <div className="ml-auto shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                      <div
-                        className={`w-6 h-6 rounded-full flex items-center justify-center
-                          ${
-                            theme === "dark"
-                              ? "bg-gray-800 text-gray-400"
-                              : "bg-gray-100 text-gray-500"
-                          }`}
-                      >
-                        <Send size={10} />
-                      </div>
-                    </div>
-                  </motion.a>
-                );
-              })}
-            </div>
-          </motion.div>
-
-          {/* ── Right — Contact Form ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className={`rounded-2xl border p-6 md:p-8 transition-all duration-300
-              ${
-                theme === "dark"
-                  ? "bg-gray-900 border-gray-800"
-                  : "bg-white border-gray-100"
-              }`}
-          >
-            {/* Form header */}
-            <div
-              className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4
-                ${
-                  theme === "dark"
-                    ? "bg-indigo-500/10 border border-indigo-500/20"
-                    : "bg-indigo-50 border border-indigo-100"
-                }`}
-            >
-              <Mail size={18} className="text-indigo-500 dark:text-indigo-400" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-1">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
               Send Me a Message
             </h3>
-            <p className="text-sm text-gray-400 dark:text-gray-500 mb-6">
-              Fill out the form and I'll get back to you soon.
+            <p className="text-sm text-gray-500 dark:text-gray-400 max-w-md">
+              Have a project, opportunity, or question in mind? Fill out the form below and I'll get back to you promptly.
             </p>
+          </div>
 
-            {/* Divider */}
-            <div className="h-px w-full bg-gray-100 dark:bg-gray-800 mb-6" />
+          {/* Divider */}
+          <div className="h-px w-full bg-gray-100 dark:bg-gray-800 mb-8" />
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Name + Email row */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
-                    Name <span className="text-indigo-400">*</span>
-                  </label>
-                  <input
-                    name="name"
-                    placeholder="Your name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={inputClass}
-                  />
-                </div>
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
-                    Email <span className="text-indigo-400">*</span>
-                  </label>
-                  <input
-                    name="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={inputClass}
-                  />
-                </div>
-              </div>
-
-              {/* Subject */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
-                  Subject <span className="text-indigo-400">*</span>
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Name + Email row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                  Name <span className="text-indigo-500">*</span>
                 </label>
                 <input
-                  name="subject"
-                  placeholder="How can I help you?"
+                  name="name"
+                  placeholder="Your full name"
                   required
-                  value={formData.subject}
+                  value={formData.name}
                   onChange={handleChange}
                   className={inputClass}
                 />
               </div>
-
-              {/* Message */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500">
-                  Message <span className="text-indigo-400">*</span>
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                  Email <span className="text-indigo-500">*</span>
                 </label>
-                <textarea
-                  name="message"
-                  placeholder="Your message here..."
-                  rows={5}
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
                   required
-                  value={formData.message}
+                  value={formData.email}
                   onChange={handleChange}
-                  className={`${inputClass} resize-none`}
+                  className={inputClass}
                 />
               </div>
+            </div>
 
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={loading}
-                className={`w-full flex items-center justify-center gap-2 px-6 py-3.5
-                  rounded-full text-sm font-medium border
-                  transition-all duration-300 group mt-2
-                  disabled:opacity-60 disabled:cursor-not-allowed
-                  ${
-                    theme === "dark"
-                      ? "border-gray-700 text-gray-300 hover:border-indigo-500 hover:text-white hover:bg-indigo-500/10"
-                      : "border-gray-200 text-gray-600 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50"
-                  }`}
-              >
-                {loading ? (
-                  <>
-                    <svg
-                      className="animate-spin h-4 w-4 text-current"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      />
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      />
-                    </svg>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send
-                      size={15}
-                      className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
+            {/* Subject */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                Subject <span className="text-indigo-500">*</span>
+              </label>
+              <input
+                name="subject"
+                placeholder="What would you like to discuss?"
+                required
+                value={formData.subject}
+                onChange={handleChange}
+                className={inputClass}
+              />
+            </div>
+
+            {/* Message */}
+            <div className="flex flex-col gap-2">
+              <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                Message <span className="text-indigo-500">*</span>
+              </label>
+              <textarea
+                name="message"
+                placeholder="Tell me more about your requirements or inquiry..."
+                rows={5}
+                required
+                value={formData.message}
+                onChange={handleChange}
+                className={`${inputClass} resize-none`}
+              />
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={loading}
+              className={`w-full flex items-center justify-center gap-2 px-8 py-4
+                rounded-full text-sm font-medium border
+                transition-all duration-300 group mt-4 shadow-sm
+                disabled:opacity-60 disabled:cursor-not-allowed
+                ${
+                  theme === "dark"
+                    ? "border-gray-700 text-gray-200 hover:border-indigo-500 hover:text-white hover:bg-indigo-500/10 hover:shadow-indigo-500/10"
+                    : "border-gray-200 text-gray-700 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50/70 hover:shadow-indigo-50"
+                }`}
+            >
+              {loading ? (
+                <>
+                  <svg
+                    className="animate-spin h-4 w-4 text-current"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
                     />
-                    Send Message
-                  </>
-                )}
-              </button>
-            </form>
-          </motion.div>
-        </div>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send
+                    size={16}
+                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 text-indigo-500"
+                  />
+                  Send Message
+                </>
+              )}
+            </button>
+          </form>
+        </motion.div>
       </div>
     </section>
   );

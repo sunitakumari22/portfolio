@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
-import { useTheme } from "./ThemeProvider";
 
 const NavLink = ({
   href,
@@ -29,8 +28,6 @@ const NavLink = ({
 export default function Navbar({ onAiClick }: { onAiClick?: () => void }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [connectOpen, setConnectOpen] = useState(false);
-  const { theme } = useTheme();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -63,64 +60,25 @@ export default function Navbar({ onAiClick }: { onAiClick?: () => void }) {
           </a>
 
           {/* Desktop Nav */}
-          <ul className="hidden md:flex items-center space-x-8">
-            <NavLink href="#projects" title="Projects" />
+          <ul className="hidden md:flex items-center space-x-7">
             <NavLink href="#about" title="About me" />
+            <NavLink href="#experience" title="Experience" />
+            <NavLink href="#contact" title="Contact" />
 
-            {/* Connect dropdown */}
-            <li className="relative">
-              <button
-                onClick={() => setConnectOpen(!connectOpen)}
-                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors flex items-center gap-1"
+            {/* LinkedIn Direct Button */}
+            <li>
+              <a
+                href="https://linkedin.com/in/sunita-kumari1606"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium border border-blue-600/30 dark:border-blue-500/40 text-blue-600 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-500/10 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 dark:hover:text-white transition-all duration-200 shadow-sm"
               >
-                Connect
-                <motion.svg
-                  animate={{ rotate: connectOpen ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="w-3 h-3 mt-0.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </motion.svg>
-              </button>
-
-              <AnimatePresence>
-                {connectOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -8, scale: 0.95 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-3 w-44 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 py-2 z-50"
-                  >
-                    {[
-                      { label: "Contact", href: "#contact" },
-                      { label: "LinkedIn", href: "https://linkedin.com" },
-                      { label: "GitHub", href: "https://github.com" },
-                      { label: "Twitter", href: "https://twitter.com" },
-                    ].map((item) => (
-                      <a
-                        key={item.label}
-                        href={item.href}
-                        target={item.href.startsWith("http") ? "_blank" : undefined}
-                        rel="noopener noreferrer"
-                        onClick={() => setConnectOpen(false)}
-                        className="block px-4 py-2.5 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                      >
-                        {item.label}
-                      </a>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                <Linkedin size={13} />
+                <span>LinkedIn</span>
+              </a>
             </li>
 
-            {/* ── AI Button in Navbar ── */}
-          
-
-            {/* Theme Toggle */}
+            {/* Theme Toggle (Instant Light / Dark switch) */}
             <li>
               <ThemeToggle />
             </li>
@@ -165,10 +123,21 @@ export default function Navbar({ onAiClick }: { onAiClick?: () => void }) {
           >
             <ul className="flex flex-col py-5 px-6 space-y-4">
               <NavLink href="#home" title="Home" onClick={closeMenu} />
-              <NavLink href="#projects" title="Projects" onClick={closeMenu} />
               <NavLink href="#about" title="About me" onClick={closeMenu} />
               <NavLink href="#experience" title="Experience" onClick={closeMenu} />
               <NavLink href="#contact" title="Contact" onClick={closeMenu} />
+              <li className="pt-2 border-t border-gray-100 dark:border-gray-800">
+                <a
+                  href="https://linkedin.com/in/sunita-kumari1606"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400"
+                >
+                  <Linkedin size={16} />
+                  <span>LinkedIn</span>
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}

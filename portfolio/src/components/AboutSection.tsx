@@ -5,61 +5,49 @@ import { useTheme } from "./ThemeProvider";
 
 const skills = [
   // Frontend
-  { name: "Angular", category: "frontend" },
-  { name: "React", category: "frontend" },
+  { name: "React.js", category: "frontend" },
   { name: "Next.js", category: "frontend" },
+  { name: "Angular", category: "frontend" },
   { name: "TypeScript", category: "frontend" },
   { name: "JavaScript (ES6+)", category: "frontend" },
-  { name: "RxJS", category: "frontend" },
-  { name: "Redux", category: "frontend" },
   { name: "TanStack Query", category: "frontend" },
-  { name: "PrimeNG", category: "frontend" },
+  { name: "Redux", category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
-  { name: "Bootstrap", category: "frontend" },
+  { name: "PrimeNG", category: "frontend" },
   { name: "HTML5", category: "frontend" },
   { name: "CSS3", category: "frontend" },
 
-  // Backend
+  // Backend & APIs
   { name: "Node.js", category: "backend" },
   { name: "Express.js", category: "backend" },
-  { name: "ASP.NET", category: "backend" },
+  { name: "Fastify", category: "backend" },
+  { name: "REST APIs", category: "backend" },
+  { name: "WebSockets", category: "backend" },
+  { name: "API Gateway", category: "backend" },
+  { name: "Microservices Architecture", category: "backend" },
   { name: "Python", category: "backend" },
-  { name: "Java", category: "backend" },
 
-  // Database & Caching
+  // Databases & Systems
+  { name: "PostgreSQL", category: "database" },
   { name: "MongoDB", category: "database" },
-  { name: "SQL Server", category: "database" },
-  { name: "MySQL", category: "database" },
-  { name: "Redis", category: "database" },
+  { name: "Redis (Pub/Sub & Queues)", category: "database" },
+  { name: "Database Optimization", category: "database" },
+  { name: "Multi-Tenant SaaS", category: "database" },
+  { name: "System Design (HLD/LLD)", category: "database" },
+  { name: "Asynchronous Processing", category: "database" },
+  { name: "RBAC", category: "database" },
+  { name: "Caching", category: "database" },
 
-  // Tools & Libraries
+  // AI & Tooling
+  { name: "LLM Integration", category: "tools" },
+  { name: "Structured Data Extraction", category: "tools" },
+  { name: "Docker", category: "tools" },
   { name: "Git", category: "tools" },
-  { name: "GitHub", category: "tools" },
-  { name: "VS Code", category: "tools" },
   { name: "Postman", category: "tools" },
-  { name: "JWT Authentication", category: "tools" },
-  { name: "RESTful APIs", category: "tools" },
-  { name: "Cloudinary", category: "tools" },
-  { name: "Babel", category: "tools" },
-  { name: "Vite", category: "tools" },
-  { name: "npm", category: "tools" },
-
-  // Testing
-  { name: "Jest", category: "testing" },
-
-  // DevOps & Deployment
-  { name: "Docker", category: "devops" },
-  { name: "Kubernetes", category: "devops" },
-  { name: "Vercel", category: "devops" },
-  { name: "Netlify", category: "devops" },
-
-  // Concepts
-  { name: "Responsive Web Design", category: "concepts" },
-  { name: "REST API Integration", category: "concepts" },
-  { name: "Reusable Component Architecture", category: "concepts" },
-  { name: "Performance Optimization", category: "concepts" },
-  { name: "Cross-Browser Compatibility", category: "concepts" },
-  { name: "Agile Development", category: "concepts" },
+  { name: "Jest", category: "tools" },
+  { name: "Razorpay", category: "tools" },
+  { name: "Easebuzz", category: "tools" },
+  { name: "SMTP", category: "tools" },
 ];
 
 const cards = [
@@ -67,27 +55,24 @@ const cards = [
     icon: User,
     title: "About Me",
     content: (
-      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed text-center">
+      <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base leading-relaxed text-center max-w-4xl mx-auto">
         I'm a passionate{" "}
-        <span className="font-semibold text-gray-700 dark:text-gray-200">
-          Frontend Developer 
+        <span className="font-semibold text-gray-800 dark:text-gray-200">
+          Software Engineer
         </span>{" "}
-       with 2+ years of experience building scalable enterprise applications using Angular, React, and
-TypeScript. Experienced in developing CRM systems, reusable UI architectures, REST API integrations, and
-performance-optimized web applications serving 5000+ users.
-
+        with 2+ years of experience designing and shipping scalable multi-tenant SaaS platforms, distributed microservices, and enterprise applications using React, TypeScript, Node.js, Fastify, and PostgreSQL. Proven expertise in client-facing requirement discovery, high-throughput API design, asynchronous processing, and relational database tuning. Hands-on experience architecting 0-to-1 systems and integrating AI/LLM data extraction pipelines.
       </p>
     ),
   },
-
 ];
 
-type Category = "all" | "frontend" | "backend" | "tools";
+type Category = "all" | "frontend" | "backend" | "database" | "tools";
 const categories: { label: string; value: Category }[] = [
   { label: "All", value: "all" },
   { label: "Frontend", value: "frontend" },
-  { label: "Backend", value: "backend" },
-  { label: "Tools", value: "tools" },
+  { label: "Backend & APIs", value: "backend" },
+  { label: "Databases & Architecture", value: "database" },
+  { label: "AI & Tooling", value: "tools" },
 ];
 
 const categoryColor: Record<string, string> = {
@@ -95,6 +80,8 @@ const categoryColor: Record<string, string> = {
     "bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-200 dark:border-indigo-500/30",
   backend:
     "bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-500/30",
+  database:
+    "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30",
   tools:
     "bg-pink-50 dark:bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-200 dark:border-pink-500/30",
 };

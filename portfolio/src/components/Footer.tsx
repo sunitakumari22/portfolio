@@ -12,7 +12,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold">
               Sunita <span className="text-primary">Kumari</span>
             </h3>
-            <p className="text-muted-foreground">Software Developer</p>
+            <p className="text-muted-foreground">Software Engineer</p>
           </div>
           
           <div className="flex space-x-4 mb-4 md:mb-0">
@@ -33,7 +33,7 @@ export default function Footer() {
               <Linkedin size={20} />
             </a>
             <a 
-              href="mailto:angelsunita2468@gmail.com" 
+              href="mailto:officialsunita1606@gmail.com" 
               className="h-10 w-10 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={20} />
